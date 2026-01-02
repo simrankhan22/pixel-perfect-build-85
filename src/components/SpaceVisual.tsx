@@ -1,10 +1,19 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 const SpaceVisual = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section className="py-16 relative overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
       
-      <div className="container mx-auto max-w-6xl px-6 relative">
+      <div 
+        ref={ref}
+        className={`container mx-auto max-w-6xl px-6 relative transition-all duration-1000 ${
+          isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+        }`}
+      >
         <div className="relative h-80 flex items-center justify-center">
           {/* Central Planet */}
           <div className="relative">
