@@ -87,6 +87,30 @@ export default {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
+        "bounce-gentle": {
+          "0%, 100%": { transform: "translateY(0) rotate(-5deg)" },
+          "50%": { transform: "translateY(-5px) rotate(-5deg)" },
+        },
+        dash: {
+          "0%": { strokeDashoffset: "100" },
+          "100%": { strokeDashoffset: "0" },
+        },
+        orbit: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "orbit-reverse": {
+          "0%": { transform: "rotate(360deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        twinkle: {
+          "0%, 100%": { opacity: "0.3", transform: "scale(1)" },
+          "50%": { opacity: "1", transform: "scale(1.2)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -94,6 +118,12 @@ export default {
         float: "float 6s ease-in-out infinite",
         "pulse-slow": "pulse 3s ease-in-out infinite",
         shimmer: "shimmer 3s ease-in-out infinite",
+        "bounce-gentle": "bounce-gentle 2s ease-in-out infinite",
+        dash: "dash 2s ease-in-out infinite",
+        orbit: "orbit 8s linear infinite",
+        "orbit-reverse": "orbit-reverse 12s linear infinite",
+        "spin-slow": "spin-slow 20s linear infinite",
+        twinkle: "twinkle 2s ease-in-out infinite",
       },
     },
   },

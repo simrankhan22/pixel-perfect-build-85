@@ -6,28 +6,24 @@ const cards = [
     title: "IEEE paper",
     description: "A paper I co-authored, detailing our analysis of features and their impact on identifying fake product reviews on e-commerce platforms.",
     buttonText: "READ MORE",
-    iconBg: "bg-purple-mid",
   },
   {
     icon: User,
     title: "Interview uu",
     description: "A candid interview I took from my fellow students at the university about their experiences.",
     buttonText: "LEARN MORE",
-    iconBg: "bg-purple-mid",
   },
   {
     icon: Video,
     title: "Interview (youtube)",
     description: "Exclusive: A conversation where I discuss my role in executing targeted marketing strategies.",
     buttonText: "LEARN MORE",
-    iconBg: "bg-purple-mid",
   },
   {
     icon: File,
     title: "Resume",
     description: "View a brief snapshot of my career, including my education, training, and relevant work experience.",
     buttonText: "LEARN MORE",
-    iconBg: "bg-purple-mid",
   },
 ];
 
@@ -43,20 +39,20 @@ const ReadMoreSection = () => {
           {cards.map((card, index) => (
             <div 
               key={index}
-              className="card-gradient rounded-xl p-6 transition-transform duration-300 hover:scale-[1.02]"
+              className="bg-lavender rounded-xl p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10"
             >
               <div className="flex items-start gap-4">
-                <div className={`${card.iconBg} p-3 rounded-lg`}>
-                  <card.icon className="w-6 h-6 text-primary" />
+                <div className="bg-purple-mid/50 p-3 rounded-lg">
+                  <card.icon className="w-6 h-6 text-purple-dark" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-card-foreground mb-2">
+                  <h3 className="text-lg font-semibold text-purple-dark mb-2">
                     {card.title}
                   </h3>
-                  <p className="text-sm text-card-foreground/70 mb-4 line-clamp-2">
+                  <p className="text-sm text-purple-dark/70 mb-4 line-clamp-2">
                     {card.description}
                   </p>
-                  <button className="px-4 py-2 bg-muted text-xs font-medium rounded-md text-muted-foreground hover:bg-purple-mid transition-colors">
+                  <button className="px-4 py-2 bg-purple-mid/30 text-xs font-medium rounded-md text-purple-dark hover:bg-purple-mid/50 transition-colors">
                     {card.buttonText}
                   </button>
                 </div>
