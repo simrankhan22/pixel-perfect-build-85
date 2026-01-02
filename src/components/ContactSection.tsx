@@ -1,4 +1,5 @@
 import { Linkedin, Mail, Github, Code } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const socialLinks = [
   { icon: Linkedin, label: "LinkedIn", href: "#", color: "hover:bg-[#0077B5]" },
@@ -8,9 +9,16 @@ const socialLinks = [
 ];
 
 const ContactSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <footer className="py-20 px-6 border-t border-border/20 bg-gradient-to-t from-purple-dark/50 to-transparent">
-      <div className="container mx-auto max-w-4xl">
+      <div 
+        ref={ref}
+        className={`container mx-auto max-w-4xl transition-all duration-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           {/* Left side - Text */}
           <div>
@@ -31,6 +39,7 @@ const ContactSection = () => {
                 href={social.href}
                 aria-label={social.label}
                 className={`group flex items-center justify-center w-12 h-12 rounded-full bg-muted/30 border border-border/30 transition-all duration-300 ${social.color} hover:border-transparent hover:scale-110 hover:shadow-lg hover:shadow-primary/20`}
+                style={{ transitionDelay: `${index * 50}ms` }}
               >
                 <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
               </a>

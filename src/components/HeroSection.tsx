@@ -1,11 +1,20 @@
 import profilePhoto from "@/assets/profile-photo.png";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
+  const { ref: aboutRef, isVisible: aboutVisible } = useScrollAnimation();
+
   return (
     <section className="pt-32 pb-16 px-6">
       <div className="container mx-auto max-w-4xl">
         {/* Hero Header */}
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16 relative">
+        <div 
+          ref={heroRef}
+          className={`flex flex-col md:flex-row items-center md:items-start gap-8 mb-16 relative transition-all duration-700 ${
+            heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           {/* Profile Image */}
           <div className="relative">
             <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-primary/30 glow-effect">
@@ -62,7 +71,12 @@ const HeroSection = () => {
         </div>
 
         {/* About Section */}
-        <div className="mb-16">
+        <div 
+          ref={aboutRef}
+          className={`mb-16 transition-all duration-700 delay-200 ${
+            aboutVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
             Hi! My name is Simran Khan
           </h2>
