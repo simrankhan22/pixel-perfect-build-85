@@ -1,35 +1,41 @@
 import Navigation from "@/components/Navigation";
 import ContactSection from "@/components/ContactSection";
 import { Snowflake } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const projects = [
   {
+    id: "0",
     label: "Completed",
-    title: "Example Project",
+    title: "Data Visualization Dashboard",
     description: "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=350&fit=crop",
     caption: "View as transformed by (AI/js)",
     layout: "left" as const,
   },
   {
+    id: "1",
     label: "Ongoing",
-    title: "Example Project",
+    title: "AI-Powered Analytics Platform",
     description: "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=350&fit=crop",
     caption: "OPPORTUNITY (AI/js)",
     layout: "right" as const,
   },
   {
+    id: "2",
     label: "Featured Project",
-    title: "Example Project",
+    title: "Healthcare Management System",
     description: "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=350&fit=crop",
     caption: "View as transformed by (AI/js)",
     layout: "left" as const,
   },
   {
+    id: "3",
     label: "Featured Project",
-    title: "Example Project",
+    title: "Financial Portfolio Tracker",
     description: "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
     image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500&h=350&fit=crop",
     caption: "OPPORTUNITY (AI/js)",
@@ -38,11 +44,16 @@ const projects = [
 ];
 
 const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
   const isLeft = project.layout === "left";
   
   return (
     <div 
-      className={`flex flex-col ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center relative`}
+      ref={ref}
+      className={`flex flex-col ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center relative transition-all duration-700 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+      style={{ transitionDelay: `${index * 100}ms` }}
     >
       {/* Glow effect */}
       <div className={`absolute ${isLeft ? '-left-20' : '-right-20'} top-1/2 -translate-y-1/2 w-96 h-96 bg-primary/20 rounded-full blur-[100px] pointer-events-none`} />
@@ -68,14 +79,16 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
       
       {/* Image */}
       <div className="flex-1 relative z-10">
-        <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-lg shadow-primary/10">
-          <img 
-            src={project.image} 
-            alt={project.title}
-            className="w-full h-64 object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-        </div>
+        <Link to={`/projects/${project.id}`} className="block group">
+          <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-lg shadow-primary/10 transition-transform duration-300 group-hover:scale-[1.02]">
+            <img 
+              src={project.image} 
+              alt={project.title}
+              className="w-full h-64 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+          </div>
+        </Link>
         <p className="text-xs text-muted-foreground text-center mt-3">
           {project.caption}
         </p>
@@ -85,13 +98,20 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 };
 
 const Projects = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       
       <main className="pt-32 pb-20">
         {/* Hero Section */}
-        <section className="px-6 mb-32">
+        <section 
+          ref={headerRef}
+          className={`px-6 mb-32 transition-all duration-700 ${
+            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="container mx-auto max-w-4xl">
             <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-6 leading-tight">
               Welcome to the projects<br />section!
@@ -111,7 +131,7 @@ const Projects = () => {
         <section className="px-6">
           <div className="container mx-auto max-w-5xl space-y-32">
             {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} index={index} />
+              <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
         </section>
