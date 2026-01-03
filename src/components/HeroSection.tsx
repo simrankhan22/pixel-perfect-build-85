@@ -6,8 +6,26 @@ const HeroSection = () => {
   const { ref: aboutRef, isVisible: aboutVisible } = useScrollAnimation();
 
   return (
-    <section className="pt-32 pb-16 px-6">
-      <div className="container mx-auto max-w-4xl">
+    <section className="pt-32 pb-16 px-6 relative overflow-hidden">
+      {/* Animated background particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="particle"
+            style={{
+              width: `${Math.random() * 8 + 4}px`,
+              height: `${Math.random() * 8 + 4}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${i * 0.8}s`,
+              animationDuration: `${6 + Math.random() * 4}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container mx-auto max-w-4xl relative">
         {/* Hero Header */}
         <div 
           ref={heroRef}
@@ -16,15 +34,15 @@ const HeroSection = () => {
           }`}
         >
           {/* Profile Image */}
-          <div className="relative">
+          <div className={`relative group ${heroVisible ? 'animate-scale-in' : ''}`} style={{ animationDelay: '0.2s' }}>
             {/* Gradient background glow */}
-            <div className="absolute -inset-4 bg-gradient-to-br from-primary/40 via-magenta/30 to-purple-mid/50 rounded-full blur-xl opacity-60" />
+            <div className="absolute -inset-4 bg-gradient-to-br from-primary/40 via-magenta/30 to-purple-mid/50 rounded-full blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500 animate-glow-pulse" />
             <div className="absolute -inset-2 bg-gradient-to-tr from-primary/20 to-lavender/20 rounded-full blur-md" />
-            <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/30 glow-effect bg-gradient-to-br from-primary/20 to-purple-mid/30">
+            <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/30 glow-effect bg-gradient-to-br from-primary/20 to-purple-mid/30 hover-lift">
               <img 
                 src={profilePhoto} 
                 alt="Simran Khan" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </div>
           </div>
@@ -62,14 +80,14 @@ const HeroSection = () => {
           </svg>
           
           {/* Intro Text */}
-          <div className="text-center md:text-left md:ml-8 md:pt-8">
+          <div className={`text-center md:text-left md:ml-8 md:pt-8 ${heroVisible ? 'stagger-children' : ''}`}>
             <p className="text-sm text-muted-foreground mb-2">
-              Hello! I Am <span className="text-gradient font-semibold">Simran Khan</span>
+              Hello! I Am <span className="text-gradient font-semibold shimmer-text">Simran Khan</span>
             </p>
             <p className="text-muted-foreground text-sm mb-1">A Developer who is</p>
             <h1 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
               passionate about data<br />
-              & its impact on <span className="text-gradient underline decoration-primary underline-offset-4">AI/ML...</span>
+              & its impact on <span className="text-gradient underline decoration-primary underline-offset-4 hover:decoration-2 transition-all">AI/ML...</span>
             </h1>
           </div>
         </div>
@@ -81,14 +99,14 @@ const HeroSection = () => {
             aboutVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
+          <h2 className={`text-2xl md:text-3xl font-semibold text-foreground mb-2 ${aboutVisible ? 'animate-fade-in' : ''}`}>
             Hi! My name is Simran Khan
           </h2>
-          <p className="text-muted-foreground text-sm mb-6">
+          <p className={`text-muted-foreground text-sm mb-6 ${aboutVisible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.1s' }}>
             Currently, I'm doing my Master's in data science at Uppsala<br />
             University, Sweden
           </p>
-          <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
+          <p className={`text-muted-foreground text-sm leading-relaxed max-w-2xl ${aboutVisible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.2s' }}>
             A passionate AI and Machine Learning enthusiast dedicated to harnessing
             the power of technology to solve real-world problems. With a strong
             foundation in Computer engineering, I thrive on exploring the latest
