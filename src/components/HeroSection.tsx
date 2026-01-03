@@ -17,7 +17,10 @@ const HeroSection = () => {
         >
           {/* Profile Image */}
           <div className="relative">
-            <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-primary/30 glow-effect">
+            {/* Gradient background glow */}
+            <div className="absolute -inset-4 bg-gradient-to-br from-primary/40 via-magenta/30 to-purple-mid/50 rounded-full blur-xl opacity-60" />
+            <div className="absolute -inset-2 bg-gradient-to-tr from-primary/20 to-lavender/20 rounded-full blur-md" />
+            <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/30 glow-effect bg-gradient-to-br from-primary/20 to-purple-mid/30">
               <img 
                 src={profilePhoto} 
                 alt="Simran Khan" 
@@ -26,14 +29,15 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Cute Arrow */}
+          {/* Cute Arrow - positioned above text */}
           <svg 
-            className="absolute left-44 top-4 w-24 h-16 text-primary hidden md:block animate-bounce-gentle"
-            viewBox="0 0 100 60" 
+            className="absolute left-36 -top-2 w-32 h-20 text-primary hidden md:block animate-bounce-gentle"
+            viewBox="0 0 120 80" 
             fill="none"
           >
+            {/* Arrow curving from above profile to text */}
             <path 
-              d="M5 50 Q 20 55, 35 45 Q 50 35, 65 30 Q 80 25, 90 15" 
+              d="M10 60 Q 30 70, 50 50 Q 70 30, 90 25 Q 100 22, 110 28" 
               stroke="currentColor" 
               strokeWidth="2" 
               strokeLinecap="round"
@@ -42,23 +46,23 @@ const HeroSection = () => {
               className="animate-dash"
             />
             <path 
-              d="M82 10 L90 15 L85 23" 
+              d="M102 22 L110 28 L108 38" 
               stroke="currentColor" 
               strokeWidth="2" 
               strokeLinecap="round" 
               strokeLinejoin="round"
               fill="none"
             />
-            {/* Cute heart at the end */}
+            {/* Cute heart at the start */}
             <path 
-              d="M3 48 C 3 45, 6 45, 6 47 C 6 45, 9 45, 9 48 C 9 51, 6 53, 6 53 C 6 53, 3 51, 3 48" 
+              d="M8 58 C 8 55, 11 55, 11 57 C 11 55, 14 55, 14 58 C 14 61, 11 63, 11 63 C 11 63, 8 61, 8 58" 
               fill="currentColor"
               className="animate-pulse-slow"
             />
           </svg>
           
           {/* Intro Text */}
-          <div className="text-center md:text-left md:ml-8">
+          <div className="text-center md:text-left md:ml-8 md:pt-8">
             <p className="text-sm text-muted-foreground mb-2">
               Hello! I Am <span className="text-gradient font-semibold">Simran Khan</span>
             </p>
