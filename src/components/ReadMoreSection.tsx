@@ -100,8 +100,26 @@ const ReadMoreSection = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
 
   return (
-    <section className="py-16 px-6">
-      <div className="container mx-auto max-w-5xl">
+    <section className="py-16 px-6 relative overflow-hidden">
+      {/* Floating background particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(4)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full bg-primary/20 blur-xl"
+            style={{
+              width: `${80 + i * 40}px`,
+              height: `${80 + i * 40}px`,
+              left: `${20 + i * 20}%`,
+              top: `${10 + i * 15}%`,
+              animation: `float ${8 + i * 2}s ease-in-out infinite`,
+              animationDelay: `${i * 1.5}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container mx-auto max-w-5xl relative z-10">
         <h2 
           ref={titleRef}
           className={`text-2xl md:text-3xl font-semibold text-foreground mb-10 transition-all duration-700 ${
@@ -119,29 +137,30 @@ const ReadMoreSection = () => {
               return (
                 <div
                   ref={ref}
-                  className={`group relative bg-gradient-to-br from-purple-dark/80 to-purple-dark/40 rounded-2xl p-6 border border-primary/20 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 hover:scale-[1.02] ${
+                  className={`group relative bg-gradient-to-br from-purple-dark/80 to-purple-dark/40 rounded-2xl p-6 border border-primary/20 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 hover-lift ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   {/* Background glow effect */}
                   <div className="absolute -top-20 -left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-magenta/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   
                   <div className="flex items-center gap-6 relative z-10">
                     {/* 3D Icon */}
-                    <div className="flex-shrink-0 animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
+                    <div className="flex-shrink-0 animate-float group-hover:animate-wiggle transition-all duration-300" style={{ animationDelay: `${index * 0.2}s` }}>
                       {card.icon}
                     </div>
                     
                     {/* Content */}
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-foreground mb-2">
+                      <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                         {card.title}
                       </h3>
                       <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
                         {card.description}
                       </p>
-                      <button className="px-6 py-2.5 border border-foreground/30 text-sm font-medium rounded-lg text-foreground hover:bg-foreground/10 hover:border-foreground/50 transition-all duration-300">
+                      <button className="px-6 py-2.5 border border-foreground/30 text-sm font-medium rounded-lg text-foreground hover:bg-foreground/10 hover:border-foreground/50 transition-all duration-300 underline-grow">
                         {card.buttonText}
                       </button>
                     </div>
