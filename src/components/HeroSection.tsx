@@ -1,4 +1,4 @@
-import profilePhoto from "@/assets/profile-photo.png";
+// Profile photo removed - add your photo later
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
@@ -35,47 +35,37 @@ const HeroSection = () => {
         >
           {/* Profile Image */}
           <div className={`relative group ${heroVisible ? 'animate-scale-in' : ''}`} style={{ animationDelay: '0.2s' }}>
-            {/* Gradient background glow */}
+          {/* Gradient background glow - placeholder for profile photo */}
             <div className="absolute -inset-4 bg-gradient-to-br from-primary/40 via-magenta/30 to-purple-mid/50 rounded-full blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500 animate-glow-pulse" />
             <div className="absolute -inset-2 bg-gradient-to-tr from-primary/20 to-lavender/20 rounded-full blur-md" />
-            <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/30 glow-effect bg-gradient-to-br from-primary/20 to-purple-mid/30 hover-lift">
-              <img 
-                src={profilePhoto} 
-                alt="Simran Khan" 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+            <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/30 glow-effect bg-gradient-to-br from-primary/20 to-purple-mid/30 hover-lift flex items-center justify-center">
+              {/* Add your profile photo here */}
+              <span className="text-muted-foreground text-xs text-center px-2">Add Photo</span>
             </div>
           </div>
           
-          {/* Cute Arrow - positioned above text */}
+          {/* Clean curved arrow pointing from profile to text */}
           <svg 
-            className="absolute left-36 -top-2 w-32 h-20 text-primary hidden md:block animate-bounce-gentle"
-            viewBox="0 0 120 80" 
+            className="absolute left-[140px] top-4 w-24 h-16 text-primary hidden md:block"
+            viewBox="0 0 100 60" 
             fill="none"
           >
-            {/* Arrow curving from above profile to text */}
+            {/* Smooth curved arrow */}
             <path 
-              d="M10 60 Q 30 70, 50 50 Q 70 30, 90 25 Q 100 22, 110 28" 
+              d="M5 45 C 20 45, 30 20, 60 15 C 75 12, 85 15, 92 18" 
               stroke="currentColor" 
-              strokeWidth="2" 
+              strokeWidth="2.5" 
               strokeLinecap="round"
               fill="none"
-              strokeDasharray="5,5"
-              className="animate-dash"
             />
+            {/* Arrow head */}
             <path 
-              d="M102 22 L110 28 L108 38" 
+              d="M85 12 L93 18 L87 25" 
               stroke="currentColor" 
-              strokeWidth="2" 
+              strokeWidth="2.5" 
               strokeLinecap="round" 
               strokeLinejoin="round"
               fill="none"
-            />
-            {/* Cute heart at the start */}
-            <path 
-              d="M8 58 C 8 55, 11 55, 11 57 C 11 55, 14 55, 14 58 C 14 61, 11 63, 11 63 C 11 63, 8 61, 8 58" 
-              fill="currentColor"
-              className="animate-pulse-slow"
             />
           </svg>
           
@@ -86,7 +76,7 @@ const HeroSection = () => {
             </p>
             <p className="text-muted-foreground text-sm mb-1">A Developer who is</p>
             <h1 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
-              passionate about data<br />
+              <span className="text-gradient-highlight">passionate</span> about data<br />
               & its impact on <span className="text-gradient underline decoration-primary underline-offset-4 hover:decoration-2 transition-all">AI/ML...</span>
             </h1>
           </div>
@@ -100,7 +90,7 @@ const HeroSection = () => {
           }`}
         >
           <h2 className={`text-2xl md:text-3xl font-semibold text-foreground mb-2 ${aboutVisible ? 'animate-fade-in' : ''}`}>
-            Hi! My name is Simran Khan
+            Hi! My name is <span className="text-gradient-highlight">Simran Khan</span>
           </h2>
           <p className={`text-muted-foreground text-sm mb-6 ${aboutVisible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.1s' }}>
             Currently, I'm doing my Master's in data science at Uppsala<br />
