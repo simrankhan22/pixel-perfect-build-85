@@ -7,24 +7,6 @@ const HeroSection = () => {
 
   return (
     <section className="pt-32 pb-16 px-6 relative overflow-hidden">
-      {/* Animated background particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              width: `${Math.random() * 8 + 4}px`,
-              height: `${Math.random() * 8 + 4}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.8}s`,
-              animationDuration: `${6 + Math.random() * 4}s`,
-            }}
-          />
-        ))}
-      </div>
-
       <div className="container mx-auto max-w-4xl relative">
         {/* Hero Header */}
         <div 
@@ -44,30 +26,6 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Arrow pointing from top of profile to "Simran Khan" text */}
-          <svg 
-            className="absolute left-[90px] -top-6 w-[180px] h-[80px] text-primary hidden md:block"
-            viewBox="0 0 180 80" 
-            fill="none"
-          >
-            {/* Curved path from top-left going up and right to point at name */}
-            <path 
-              d="M10 70 C 30 30, 80 5, 150 15" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round"
-              fill="none"
-            />
-            {/* Arrow head pointing right-down toward the name */}
-            <path 
-              d="M142 8 L152 15 L145 23" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-              fill="none"
-            />
-          </svg>
           
           {/* Intro Text */}
           <div className={`text-center md:text-left md:ml-8 md:pt-8 ${heroVisible ? 'stagger-children' : ''}`}>
