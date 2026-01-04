@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import ContactSection from "@/components/ContactSection";
+import AnimatedBackground from "@/components/AnimatedBackground";
 import { Snowflake } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -101,24 +102,19 @@ const Projects = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <AnimatedBackground />
       <Navigation />
       
-      <main className="pt-32 pb-20">
+      <main className="pt-32 pb-20 relative z-10">
         {/* Hero Section */}
         <section 
           ref={headerRef}
-          className={`px-6 mb-32 relative transition-all duration-700 ${
+          className={`px-6 mb-32 transition-all duration-700 ${
             headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          {/* Soft gradient background effect */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-1/4 w-[500px] h-[400px] bg-primary/15 rounded-full blur-[120px]" />
-            <div className="absolute top-20 right-1/3 w-[400px] h-[300px] bg-magenta/10 rounded-full blur-[100px]" />
-          </div>
-          
-          <div className="container mx-auto max-w-4xl relative z-10">
+          <div className="container mx-auto max-w-4xl">
             <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-6 leading-tight">
               Welcome to the projects<br />section!
             </h1>
