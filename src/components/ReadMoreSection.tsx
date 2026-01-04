@@ -122,7 +122,7 @@ const ReadMoreSection = () => {
       <div className="container mx-auto max-w-5xl relative z-10">
         <h2 
           ref={titleRef}
-          className={`text-2xl md:text-3xl font-semibold text-foreground mb-10 transition-all duration-700 ${
+          className={`text-2xl md:text-3xl font-semibold mb-10 transition-all duration-700 metallic-text ${
             titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -137,7 +137,7 @@ const ReadMoreSection = () => {
               return (
                 <div
                   ref={ref}
-                  className={`group relative bg-gradient-to-br from-purple-dark/80 to-purple-dark/40 rounded-2xl p-6 border border-primary/20 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 hover-lift ${
+                  className={`group relative metallic-card rounded-2xl p-6 border border-primary/30 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 hover-lift ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
@@ -147,8 +147,8 @@ const ReadMoreSection = () => {
                   <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-magenta/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   
                   <div className="flex items-center gap-6 relative z-10">
-                    {/* 3D Icon */}
-                    <div className="flex-shrink-0 animate-float group-hover:animate-wiggle transition-all duration-300" style={{ animationDelay: `${index * 0.2}s` }}>
+                    {/* 3D Icon - static, no floating animation */}
+                    <div className="flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                       {card.icon}
                     </div>
                     
