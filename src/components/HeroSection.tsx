@@ -44,25 +44,25 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Clean curved arrow pointing from profile to text */}
+          {/* Arrow pointing from top of profile to "Simran Khan" text */}
           <svg 
-            className="absolute left-[140px] top-4 w-24 h-16 text-primary hidden md:block"
-            viewBox="0 0 100 60" 
+            className="absolute left-[90px] -top-6 w-[180px] h-[80px] text-primary hidden md:block"
+            viewBox="0 0 180 80" 
             fill="none"
           >
-            {/* Smooth curved arrow */}
+            {/* Curved path from top-left going up and right to point at name */}
             <path 
-              d="M5 45 C 20 45, 30 20, 60 15 C 75 12, 85 15, 92 18" 
+              d="M10 70 C 30 30, 80 5, 150 15" 
               stroke="currentColor" 
-              strokeWidth="2.5" 
+              strokeWidth="2" 
               strokeLinecap="round"
               fill="none"
             />
-            {/* Arrow head */}
+            {/* Arrow head pointing right-down toward the name */}
             <path 
-              d="M85 12 L93 18 L87 25" 
+              d="M142 8 L152 15 L145 23" 
               stroke="currentColor" 
-              strokeWidth="2.5" 
+              strokeWidth="2" 
               strokeLinecap="round" 
               strokeLinejoin="round"
               fill="none"
@@ -76,7 +76,7 @@ const HeroSection = () => {
             </p>
             <p className="text-muted-foreground text-sm mb-1">A Developer who is</p>
             <h1 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
-              <span className="text-gradient-highlight">passionate</span> about data<br />
+              passionate about data<br />
               & its impact on <span className="text-gradient underline decoration-primary underline-offset-4 hover:decoration-2 transition-all">AI/ML...</span>
             </h1>
           </div>
@@ -90,7 +90,7 @@ const HeroSection = () => {
           }`}
         >
           <h2 className={`text-2xl md:text-3xl font-semibold text-foreground mb-2 ${aboutVisible ? 'animate-fade-in' : ''}`}>
-            Hi! My name is <span className="text-gradient-highlight">Simran Khan</span>
+            Hi! My name is Simran Khan
           </h2>
           <p className={`text-muted-foreground text-sm mb-6 ${aboutVisible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.1s' }}>
             Currently, I'm doing my Master's in data science at Uppsala<br />
