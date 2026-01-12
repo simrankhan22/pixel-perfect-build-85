@@ -7,6 +7,7 @@ const Navigation = () => {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/projects", label: "Projects" },
+    { href: "/blogs", label: "Blogs" },
   ];
 
   return (
@@ -15,7 +16,8 @@ const Navigation = () => {
         {navLinks.map((link, index) => {
           const isActive = location.pathname === link.href || 
             (link.href === "/projects" && location.pathname.startsWith("/projects")) ||
-            (link.href === "/about" && location.pathname.startsWith("/about"));
+            (link.href === "/about" && location.pathname === "/about") ||
+            (link.href === "/blogs" && (location.pathname === "/blogs" || location.pathname.startsWith("/blog/")));
           
           return (
             <Link 
