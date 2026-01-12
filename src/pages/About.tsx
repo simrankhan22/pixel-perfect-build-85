@@ -98,7 +98,7 @@ const About = () => {
         >
           <div className="container mx-auto max-w-4xl">
             <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-6 leading-tight">
-              Welcome to my<br />about section!
+              About: My background
             </h1>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xl">
               Hi, I'm Simran Khan — a passionate full-stack developer and AI enthusiast 
@@ -207,27 +207,16 @@ const About = () => {
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
               <span className="metallic-text">Interests</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <p className="text-muted-foreground leading-relaxed">
-                  Outside of technology, I have a deep appreciation for <span className="text-primary">music</span> — 
-                  whether it's playing guitar, discovering new genres, or attending live concerts. 
-                  I find that music fuels my creativity and helps me approach problems from 
-                  different angles. <span className="text-primary">Photography</span> is another passion of mine, 
-                  as I love capturing moments and exploring the world through a lens. The art of 
-                  composition and lighting in photography often inspires my approach to UI design.
-                </p>
-              </div>
-              <div>
-                <p className="text-muted-foreground leading-relaxed">
-                  I'm also an avid <span className="text-primary">traveler</span>, always seeking new cultures, 
-                  cuisines, and experiences that broaden my perspective. Each journey teaches me 
-                  something new about adaptability and problem-solving. When I'm home, you'll 
-                  find me immersed in <span className="text-primary">books</span> — from technical literature 
-                  and sci-fi novels to philosophy and psychology. I believe continuous learning 
-                  is the key to personal and professional growth.
-                </p>
-              </div>
+            <div className="flex flex-wrap gap-3">
+              {["Painting", "Dancing", "Vibecode", "Music", "Photography", "Travel", "Reading", "Gaming", "Cooking", "Hiking"].map((interest, index) => (
+                <span
+                  key={interest}
+                  className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-foreground text-sm font-medium hover:bg-primary/20 hover:border-primary/40 transition-all cursor-default"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  {interest}
+                </span>
+              ))}
             </div>
           </div>
         </section>
