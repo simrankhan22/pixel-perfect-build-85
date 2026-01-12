@@ -90,37 +90,23 @@ const About = () => {
 
       <main className="pt-32 pb-20 relative z-10">
         {/* Hero Section */}
-        <section
+        <section 
           ref={headerRef}
-          className={`px-6 mb-24 transition-all duration-700 ${
+          className={`px-6 mb-32 transition-all duration-700 ${
             headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          {/* Soft gradient background */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]" />
-            <div className="absolute top-40 right-1/4 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px]" />
-          </div>
-          
-          <div className="container mx-auto max-w-4xl relative">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8 leading-tight">
-              About Me
+          <div className="container mx-auto max-w-4xl">
+            <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-6 leading-tight">
+              Welcome to my<br />about section!
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Hi, I'm <span className="text-primary font-semibold">Simran Khan</span> — a passionate 
-              full-stack developer and AI enthusiast with a love for creating elegant, 
-              user-centric digital experiences.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              With a strong foundation in computer science and years of hands-on experience, 
-              I specialize in building scalable web applications and integrating cutting-edge 
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-xl">
+              Hi, I'm Simran Khan — a passionate full-stack developer and AI enthusiast 
+              with a love for creating elegant, user-centric digital experiences. With a 
+              strong foundation in computer science and years of hands-on experience, I 
+              specialize in building scalable web applications and integrating cutting-edge 
               machine learning solutions. I believe in the power of technology to transform 
               ideas into impactful realities.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, contributing to 
-              open-source projects, or sharing my knowledge through blogs and community events. 
-              I'm always eager to collaborate on innovative projects that push boundaries.
             </p>
           </div>
         </section>
