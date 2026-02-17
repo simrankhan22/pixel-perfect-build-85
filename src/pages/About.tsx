@@ -182,14 +182,21 @@ const About = () => {
               {awards.map((award, index) => (
                 <div
                   key={index}
-                  className="metallic-card p-6 rounded-xl min-w-[280px] flex-shrink-0 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+                  className="group relative min-w-[300px] flex-shrink-0 rounded-2xl border border-primary/10 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-6 transition-all duration-500 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 overflow-hidden"
                 >
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
-                    <award.icon className="w-6 h-6 text-primary" />
+                  {/* Decorative glow */}
+                  <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-primary/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="w-11 h-11 rounded-xl bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 transition-colors duration-300">
+                        <award.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <span className="text-xs font-semibold tracking-wider uppercase text-primary/70 bg-primary/10 px-3 py-1 rounded-full">{award.year}</span>
+                    </div>
+                    <h3 className="text-foreground font-semibold text-base mb-1.5 group-hover:text-primary transition-colors duration-300">{award.title}</h3>
+                    <p className="text-muted-foreground text-sm">{award.organization}</p>
                   </div>
-                  <h3 className="text-foreground font-medium mb-1">{award.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-2">{award.organization}</p>
-                  <span className="text-primary text-sm font-medium">{award.year}</span>
                 </div>
               ))}
             </div>
