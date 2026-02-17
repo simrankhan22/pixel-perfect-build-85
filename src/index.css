@@ -240,6 +240,19 @@
     text-shadow: 0 2px 4px hsl(270 50% 20% / 0.3);
   }
 
+  .light .metallic-text {
+    background: linear-gradient(
+      180deg,
+      hsl(270 60% 20%) 0%,
+      hsl(270 50% 30%) 50%,
+      hsl(270 60% 18%) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+  }
+
   /* Metallic card effect */
   .metallic-card {
     background: linear-gradient(
