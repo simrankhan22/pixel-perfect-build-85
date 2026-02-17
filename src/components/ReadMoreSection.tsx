@@ -68,18 +68,18 @@ const ReadMoreSection = () => {
               return (
                 <div
                   ref={ref}
-                  className={`group relative rounded-2xl border border-primary/15 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-primary/40 hover-lift cursor-pointer ${
+                  className={`group relative rounded-2xl border border-border/60 dark:border-primary/15 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 cursor-pointer bg-card dark:bg-transparent ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   {/* Gradient background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${card.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                  <div className="absolute inset-0 metallic-card" />
+                  <div className="absolute inset-0 metallic-card dark:block hidden" />
 
                   <div className="relative z-10 p-6 flex items-start gap-5">
                     {/* Icon container */}
-                    <div className={`flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/15 transition-all duration-300 ${card.iconColor}`}>
+                    <div className={`flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 dark:bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/15 transition-all duration-300 ${card.iconColor} dark:${card.iconColor}`}>
                       <Icon size={24} />
                     </div>
 
@@ -91,7 +91,7 @@ const ReadMoreSection = () => {
                       <p className="text-sm text-muted-foreground mb-4 line-clamp-2 leading-relaxed">
                         {card.description}
                       </p>
-                      <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground/70 group-hover:text-primary transition-all duration-300">
+                      <span className="inline-flex items-center gap-2 text-sm font-medium text-primary/80 group-hover:text-primary transition-all duration-300">
                         {card.buttonText}
                         <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
                       </span>
