@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import ContactSection from "@/components/ContactSection";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { ChevronLeft, ChevronRight, Award, Trophy, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Award, Trophy, Star, Palette, Music, Camera, Plane, BookOpen, Gamepad2, CookingPot, Mountain, Code, Heart } from "lucide-react";
 import { useState, useRef } from "react";
 
 const skills = [
@@ -214,14 +214,28 @@ const About = () => {
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
               <span className="metallic-text">Interests</span>
             </h2>
-            <div className="flex flex-wrap gap-3">
-              {["Painting", "Dancing", "Vibecode", "Music", "Photography", "Travel", "Reading", "Gaming", "Cooking", "Hiking"].map((interest, index) => (
+            <div className="flex flex-wrap gap-4">
+              {[
+                { name: "Painting", icon: Palette },
+                { name: "Dancing", icon: Heart },
+                { name: "Vibecode", icon: Code },
+                { name: "Music", icon: Music },
+                { name: "Photography", icon: Camera },
+                { name: "Travel", icon: Plane },
+                { name: "Reading", icon: BookOpen },
+                { name: "Gaming", icon: Gamepad2 },
+                { name: "Cooking", icon: CookingPot },
+                { name: "Hiking", icon: Mountain },
+              ].map((interest, index) => (
                 <span
-                  key={interest}
-                  className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-foreground text-sm font-medium hover:bg-primary/20 hover:border-primary/40 transition-all cursor-default"
+                  key={interest.name}
+                  className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary/15 bg-gradient-to-r from-primary/5 to-accent/5 text-foreground text-sm font-medium cursor-default transition-all duration-300 hover:border-primary/40 hover:shadow-md hover:shadow-primary/10 hover:-translate-y-0.5 overflow-hidden"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
-                  {interest}
+                  {/* Hover glow */}
+                  <span className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+                  <interest.icon className="w-4 h-4 text-primary relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="relative z-10">{interest.name}</span>
                 </span>
               ))}
             </div>
