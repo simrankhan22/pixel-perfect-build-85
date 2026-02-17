@@ -214,29 +214,34 @@ const About = () => {
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
               <span className="metallic-text">Interests</span>
             </h2>
-            <div className="flex flex-wrap gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
               {[
-                { name: "Painting", icon: Palette },
-                { name: "Dancing", icon: Heart },
-                { name: "Vibecode", icon: Code },
-                { name: "Music", icon: Music },
-                { name: "Photography", icon: Camera },
-                { name: "Travel", icon: Plane },
-                { name: "Reading", icon: BookOpen },
-                { name: "Gaming", icon: Gamepad2 },
-                { name: "Cooking", icon: CookingPot },
-                { name: "Hiking", icon: Mountain },
-              ].map((interest, index) => (
-                <span
-                  key={interest.name}
-                  className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary/15 bg-gradient-to-r from-primary/5 to-accent/5 text-foreground text-sm font-medium cursor-default transition-all duration-300 hover:border-primary/40 hover:shadow-md hover:shadow-primary/10 hover:-translate-y-0.5 overflow-hidden"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  {/* Hover glow */}
-                  <span className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
-                  <interest.icon className="w-4 h-4 text-primary relative z-10 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="relative z-10">{interest.name}</span>
-                </span>
+                [
+                  { name: "Painting", icon: Palette },
+                  { name: "Dancing", icon: Heart },
+                  { name: "Vibecode", icon: Code },
+                  { name: "Music", icon: Music },
+                  { name: "Photography", icon: Camera },
+                ],
+                [
+                  { name: "Travel", icon: Plane },
+                  { name: "Reading", icon: BookOpen },
+                  { name: "Gaming", icon: Gamepad2 },
+                  { name: "Cooking", icon: CookingPot },
+                  { name: "Hiking", icon: Mountain },
+                ],
+              ].map((column, colIndex) => (
+                <ul key={colIndex} className="space-y-3">
+                  {column.map((interest) => (
+                    <li
+                      key={interest.name}
+                      className="group flex items-center gap-3 py-2 border-b border-border/40 last:border-b-0 transition-colors duration-300 hover:border-primary/30"
+                    >
+                      <interest.icon className="w-4 h-4 text-primary/70 group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
+                      <span className="text-muted-foreground text-sm group-hover:text-foreground transition-colors duration-300">{interest.name}</span>
+                    </li>
+                  ))}
+                </ul>
               ))}
             </div>
           </div>
