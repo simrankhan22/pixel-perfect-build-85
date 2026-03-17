@@ -9,6 +9,7 @@ const cards = [
     icon: Award,
     accent: "from-amber-500/20 to-yellow-500/20",
     iconColor: "text-amber-400",
+    link: "https://ieeexplore.ieee.org/document/10625049",
   },
   {
     title: "Interview UU",
@@ -17,6 +18,7 @@ const cards = [
     icon: FileText,
     accent: "from-blue-500/20 to-cyan-500/20",
     iconColor: "text-blue-400",
+    link: "https://www.uu.se/en/study/programme/masters-programme-data-science-data-engineering/is-this-programme-right-for-you",
   },
   {
     title: "Interview (YouTube)",
@@ -25,6 +27,7 @@ const cards = [
     icon: Youtube,
     accent: "from-red-500/20 to-pink-500/20",
     iconColor: "text-red-400",
+    link: "",
   },
   {
     title: "Resume",
@@ -33,6 +36,7 @@ const cards = [
     icon: Download,
     accent: "from-primary/20 to-magenta/20",
     iconColor: "text-primary",
+    link: "",
   },
 ];
 
