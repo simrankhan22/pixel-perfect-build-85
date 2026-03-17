@@ -1,4 +1,4 @@
-// Profile photo removed - add your photo later
+import profilePhoto from "@/assets/profile-photo.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
