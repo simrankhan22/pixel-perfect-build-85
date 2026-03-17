@@ -70,11 +70,14 @@ const ReadMoreSection = () => {
               const Icon = card.icon;
 
               return (
-                <div
+                <a
                   ref={ref}
-                  className={`group relative rounded-2xl border border-border/60 dark:border-primary/15 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 cursor-pointer bg-card dark:bg-transparent ${
+                  href={card.link || undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group relative rounded-2xl border border-border/60 dark:border-primary/15 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 cursor-pointer bg-card dark:bg-transparent block ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  }`}
+                  } ${!card.link ? "pointer-events-auto cursor-default" : ""}`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   {/* Gradient background */}
@@ -101,7 +104,7 @@ const ReadMoreSection = () => {
                       </span>
                     </div>
                   </div>
-                </div>
+                </a>
               );
             };
 
