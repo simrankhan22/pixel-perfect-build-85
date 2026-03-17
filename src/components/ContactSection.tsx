@@ -2,9 +2,9 @@ import { Linkedin, Mail, Github, Code } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const socialLinks = [
-  { icon: Linkedin, label: "LinkedIn", href: "#", color: "hover:bg-[#0077B5]" },
-  { icon: Mail, label: "Email", href: "mailto:hello@example.com", color: "hover:bg-primary" },
-  { icon: Github, label: "GitHub", href: "#", color: "hover:bg-[#333]" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/simrankhan23/", color: "hover:bg-[#0077B5]" },
+  { icon: Mail, label: "Email", href: "mailto:simrann.khan0110@gmail.com", color: "hover:bg-primary" },
+  { icon: Github, label: "GitHub", href: "https://github.com/simrankhan22", color: "hover:bg-[#333]" },
   { icon: Code, label: "LeetCode", href: "#", color: "hover:bg-[#FFA116]" },
 ];
 
