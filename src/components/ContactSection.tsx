@@ -43,6 +43,8 @@ const ContactSection = () => {
               <a
                 key={index}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={social.label}
                 className={`group flex items-center justify-center w-12 h-12 rounded-full bg-muted/30 border border-border/30 transition-all duration-300 ${social.color} hover:border-transparent hover:scale-110 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1`}
               >
