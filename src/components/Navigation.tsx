@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
@@ -17,6 +18,31 @@ const Navigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { theme, setTheme } = useTheme();
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      // 0 at top → 1 after 240px scrolled
+      const p = Math.min(window.scrollY / 240, 1);
+      setScrollProgress(p);
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  // Interpolate: top = nearly transparent, scrolled = darker tint that blends
+  const bgAlpha = 0.15 + scrollProgress * 0.55; // 0.15 → 0.7
+  const blurPx = 4 + scrollProgress * 12; // 4 → 16
+  const borderAlpha = scrollProgress * 0.25;
 
   const handleAnchor = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -34,7 +60,15 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 py-6 bg-[hsl(265_64%_5%/0.7)] backdrop-blur-lg border-b border-border/20 animate-fade-in">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 py-6 animate-fade-in transition-[background-color,backdrop-filter,border-color] duration-300 ease-out"
+      style={{
+        backgroundColor: `hsl(265 64% 5% / ${bgAlpha})`,
+        backdropFilter: `blur(${blurPx}px)`,
+        WebkitBackdropFilter: `blur(${blurPx}px)`,
+        borderBottom: `1px solid hsl(var(--border) / ${borderAlpha})`,
+      }}
+    >
       <div className="container mx-auto px-6 flex items-center justify-center gap-12">
         {navLinks.map((link, index) => {
           const isAnchor = link.type === "anchor";
