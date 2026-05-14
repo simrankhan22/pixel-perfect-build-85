@@ -156,6 +156,19 @@ const BeyondTheCode = () => {
                         {item.impact}
                       </div>
                     )}
+                    {item.link && (
+                      <div className="mt-3">
+                        <a
+                          href={item.link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
+                        >
+                          {item.link.label}
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
