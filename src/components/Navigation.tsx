@@ -78,7 +78,7 @@ const Navigation = () => {
               onClick={(e) =>
                 isAnchor ? handleAnchor(e, link.id) : handleRoute(e, link.href)
               }
-              className={`text-sm font-medium transition-all duration-300 underline-grow ${
+              className={`text-sm font-medium whitespace-nowrap transition-all duration-300 underline-grow ${
                 isActive ? "text-primary" : "text-foreground hover:text-primary"
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
