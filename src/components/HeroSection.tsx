@@ -53,13 +53,17 @@ const HeroSection = () => {
             Currently, I'm doing my Master's in data science at Uppsala<br />
             University, Sweden
           </p>
-          <p className={`text-muted-foreground text-sm leading-relaxed max-w-2xl ${aboutVisible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.2s' }}>
-            A passionate AI and Machine Learning enthusiast dedicated to harnessing
-            the power of technology to solve real-world problems. With a strong
-            foundation in Computer engineering, I thrive on exploring the latest
-            advancements in Artificial Intelligence and Machine Learning, and I am
-            committed to continuous learning in this dynamic field.
-          </p>
+          <div className={`space-y-4 text-muted-foreground text-sm leading-relaxed max-w-2xl ${aboutVisible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.2s' }}>
+            <p>
+              A published ML researcher and Master's student in Data Science (Data Engineering) at Uppsala University, Sweden. I've built and shipped end-to-end machine learning systems, presented research at an IEEE international conference, and hand-constructed a 4,000-entry dataset from scratch that's publicly available on Kaggle. Before moving to Sweden, I completed my Bachelor's in Computer Engineering in Mumbai with a GPA of 8.44/10, where I led teams, shipped a medical chatbot, and developed a CNN-based tumor detection model that hit 92% accuracy on 8,000 MRI scans.
+            </p>
+            <p>
+              My work sits across the full ML and data stack which include pipeline engineering, model training, feature engineering, hyperparameter tuning, and AI-driven automation. Most recently I've been building voice AI systems using ElevenLabs and telephony APIs, and working on customer segmentation and demand forecasting projects aimed at real industry problems. I'm fluent in Python, SQL, and the tools that surround them.
+            </p>
+            <p>
+              Outside of coursework, I regularly attend lectures, tech events, and hackathons where I stay sharp, pick up new tools fast, and occasionally ship something in 48 hours that I'm genuinely proud of. Based in Uppsala, looking for internships and data engineering or ML engineering roles.
+            </p>
+          </div>
         </div>
       </div>
     </section>
