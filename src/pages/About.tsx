@@ -6,23 +6,25 @@ import { ChevronLeft, ChevronRight, Award, Trophy, Star, Palette, Music, Camera,
 import { useState, useRef } from "react";
 
 const skills = [
-  { name: "React / Next.js", rating: 5 },
-  { name: "TypeScript", rating: 5 },
-  { name: "Python", rating: 4 },
-  { name: "Node.js", rating: 4 },
-  { name: "Machine Learning", rating: 4 },
-  { name: "UI/UX Design", rating: 4 },
-  { name: "AWS / Cloud", rating: 3 },
-  { name: "Docker / Kubernetes", rating: 3 },
+  { name: "Python (Pandas, NumPy)", rating: 5 },
+  { name: "Machine Learning & Deep Learning", rating: 5 },
+  { name: "MySQL & Databases", rating: 4 },
+  { name: "Neural Networks", rating: 4 },
+  { name: "Data Engineering", rating: 4 },
+  { name: "HTML5 / CSS3 / JavaScript", rating: 4 },
+  { name: "Git / GitHub & Linux", rating: 4 },
+  { name: "LaTeX / Overleaf", rating: 3 },
 ];
 
 const awards = [
-  { icon: Trophy, title: "Best Innovation Award", organization: "Tech Summit 2024", year: "2024" },
-  { icon: Award, title: "Dean's List", organization: "University Excellence", year: "2023" },
-  { icon: Star, title: "Hackathon Winner", organization: "Global Code Challenge", year: "2023" },
-  { icon: Trophy, title: "Research Excellence", organization: "AI Research Conference", year: "2022" },
-  { icon: Award, title: "Outstanding Student", organization: "Computer Science Dept", year: "2022" },
-  { icon: Star, title: "Open Source Contributor", organization: "GitHub Community", year: "2021" },
+  { icon: Award, title: "IEEE Paper Presentation", organization: "MediMatch — ICSCSS 2024", year: "2024" },
+  { icon: Star, title: "International Student Ambassador", organization: "Uppsala University", year: "2025" },
+  { icon: Trophy, title: "Letter of Commendation", organization: "SAKEC Alumni Association", year: "2024" },
+  { icon: Award, title: "Python 3.4.3 Training", organization: "IIT Bombay", year: "2022" },
+  { icon: Award, title: "Java & C Training", organization: "IIT Bombay", year: "2022" },
+  { icon: Star, title: "Machine Learning Training", organization: "Internshala", year: "2023" },
+  { icon: Award, title: "R Programming", organization: "Infosys", year: "2023" },
+  { icon: Trophy, title: "Winners — Intra Dance", organization: "SAKEC", year: "2023" },
 ];
 
 const SkillBar = ({ name, rating }: { name: string; rating: number }) => {
@@ -101,12 +103,14 @@ const About = () => {
               About: My background
             </h1>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xl">
-              Hi, I'm Simran Khan — a passionate full-stack developer and AI enthusiast 
-              with a love for creating elegant, user-centric digital experiences. With a 
-              strong foundation in computer science and years of hands-on experience, I 
-              specialize in building scalable web applications and integrating cutting-edge 
-              machine learning solutions. I believe in the power of technology to transform 
-              ideas into impactful realities.
+              Hi, I'm Simran Khan — currently pursuing a Master's in Data Science
+              (Data Engineering) at Uppsala University, Sweden. I hold a Bachelor's
+              in Computer Engineering from Shah & Anchor Kutchhi Engineering College,
+              Mumbai. I'm passionate about AI/ML, deep learning, and turning data into
+              meaningful, real-world impact — from published IEEE research on AI-driven
+              drug recommendation to building intelligent systems for healthcare.
+              Alongside tech, I've led alumni outreach and digital media teams, and
+              currently serve as an International Student Ambassador at Uppsala University.
             </p>
           </div>
         </section>
