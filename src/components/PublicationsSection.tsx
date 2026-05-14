@@ -149,34 +149,42 @@ const PublicationsSection = () => {
                   <div className="flex-1 h-px bg-border/60" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                  {group.items.map((cert) => (
-                    <div
-                      key={cert.name}
-                      className={`group rounded-xl border bg-primary/5 backdrop-blur-sm p-4 transition-all duration-300 hover:bg-primary/10 hover:-translate-y-0.5 ${
-                        cert.highlight
-                          ? "border-primary/40 hover:border-primary/60"
-                          : "border-primary/15 hover:border-primary/40"
-                      }`}
-                    >
-                      <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-wide text-muted-foreground mb-1.5">
-                        <Award className="w-3 h-3" />
-                        {cert.issuer}
-                      </div>
-                      <div className="text-sm font-medium text-foreground leading-snug group-hover:text-primary transition-colors">
-                        {cert.name}
-                      </div>
-                      {cert.meta && (
-                        <div className="text-[11px] text-muted-foreground mt-1.5">
-                          {cert.meta}
+                  {group.items.map((cert) => {
+                    const Tag = cert.link ? "a" : "div";
+                    const linkProps = cert.link
+                      ? { href: cert.link, target: "_blank", rel: "noopener noreferrer" }
+                      : {};
+                    return (
+                      <Tag
+                        key={cert.name}
+                        {...linkProps}
+                        className={`group block rounded-xl border bg-primary/5 backdrop-blur-sm p-4 transition-all duration-300 hover:bg-primary/10 hover:-translate-y-0.5 ${
+                          cert.highlight
+                            ? "border-primary/40 hover:border-primary/60"
+                            : "border-primary/15 hover:border-primary/40"
+                        }`}
+                      >
+                        <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-wide text-muted-foreground mb-1.5">
+                          <Award className="w-3 h-3" />
+                          {cert.issuer}
                         </div>
-                      )}
-                      {cert.badge && (
-                        <span className="inline-block mt-2 text-[10px] font-medium px-2 py-0.5 rounded-full border border-primary/30 bg-primary/10 text-primary uppercase tracking-wide">
-                          {cert.badge}
-                        </span>
-                      )}
-                    </div>
-                  ))}
+                        <div className="text-sm font-medium text-foreground leading-snug group-hover:text-primary transition-colors flex items-start gap-1.5">
+                          <span>{cert.name}</span>
+                          {cert.link && <ExternalLink className="w-3 h-3 mt-1 flex-shrink-0 opacity-60 group-hover:opacity-100" />}
+                        </div>
+                        {cert.meta && (
+                          <div className="text-[11px] text-muted-foreground mt-1.5">
+                            {cert.meta}
+                          </div>
+                        )}
+                        {cert.badge && (
+                          <span className="inline-block mt-2 text-[10px] font-medium px-2 py-0.5 rounded-full border border-primary/30 bg-primary/10 text-primary uppercase tracking-wide">
+                            {cert.badge}
+                          </span>
+                        )}
+                      </Tag>
+                    );
+                  })}
                 </div>
               </div>
             ))}
