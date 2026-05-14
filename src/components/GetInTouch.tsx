@@ -7,7 +7,7 @@ const GetInTouch = () => {
   return (
     <section
       id="get-in-touch"
-      className="py-16 px-6 scroll-mt-24 relative overflow-hidden"
+      className="py-20 px-6 scroll-mt-24 relative overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[140px]" />
