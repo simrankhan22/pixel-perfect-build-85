@@ -1,6 +1,5 @@
-import { Mail } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Button } from "@/components/ui/button";
 
 const GetInTouch = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -43,20 +42,27 @@ const GetInTouch = () => {
           soon as I can!
         </p>
         <div
-          className={`transition-all duration-700 ${
+          className={`flex gap-3 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
           style={{ transitionDelay: "360ms" }}
         >
-          <a href="mailto:simrann.khan0110@gmail.com">
-            <Button
-              variant="outline"
-              className="group border-primary/30 hover:bg-primary/10 hover:border-primary/50 hover-lift"
+          {[
+            { icon: Mail, label: "Email", href: "mailto:simrann.khan0110@gmail.com" },
+            { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/simrankhan23/" },
+            { icon: Github, label: "GitHub", href: "https://github.com/simrankhan22" },
+          ].map(({ icon: Icon, label, href }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="group flex items-center justify-center w-12 h-12 rounded-full bg-muted/30 border border-border/30 transition-all duration-300 hover:bg-primary/15 hover:border-primary/50 hover:scale-110 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20"
             >
-              <Mail className="mr-2 w-4 h-4" />
-              Say Hello
-            </Button>
-          </a>
+              <Icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+            </a>
+          ))}
         </div>
       </div>
     </section>
