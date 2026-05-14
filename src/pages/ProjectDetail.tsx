@@ -114,7 +114,7 @@ const ProjectDetail = () => {
       <div className="min-h-screen bg-background">
         <Navigation />
         <main className="pt-32 pb-20 px-6">
-          <div className="container mx-auto max-w-4xl text-center">
+          <div className="container mx-auto max-w-6xl text-center">
             <h1 className="text-3xl font-semibold text-foreground mb-4">Project Not Found</h1>
             <p className="text-muted-foreground mb-8">The project you're looking for doesn't exist.</p>
             <Link to="/projects">
@@ -135,7 +135,7 @@ const ProjectDetail = () => {
       
       <main className="pt-32 pb-20">
         {/* Back Button */}
-        <div className="container mx-auto max-w-4xl px-6 mb-8">
+        <div className="container mx-auto max-w-6xl px-6 mb-8">
           <Link to="/projects">
             <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
               <ArrowLeft className="mr-2 w-4 h-4" />
@@ -146,7 +146,7 @@ const ProjectDetail = () => {
         
         {/* Hero Image */}
         <section className="px-6 mb-12">
-          <div className="container mx-auto max-w-4xl">
+          <div className="container mx-auto max-w-6xl">
             <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-xl shadow-primary/10">
               <img 
                 src={project.image} 
@@ -170,7 +170,7 @@ const ProjectDetail = () => {
             contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="container mx-auto max-w-4xl">
+          <div className="container mx-auto max-w-6xl">
             {/* Title and Meta */}
             <div className="mb-8">
               <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">

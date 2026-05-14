@@ -7,7 +7,7 @@ const HeroSection = () => {
 
   return (
     <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 px-6 relative overflow-hidden">
-      <div className="container mx-auto max-w-4xl relative">
+      <div className="container mx-auto max-w-6xl relative">
         {/* Hero Header */}
         <div 
           ref={heroRef}

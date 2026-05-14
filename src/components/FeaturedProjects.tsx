@@ -13,7 +13,7 @@ const FeaturedProjects = () => {
     <section id="projects" className="py-20 px-6 scroll-mt-24 relative">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="container mx-auto max-w-3xl relative z-10">
+      <div className="container mx-auto max-w-6xl relative z-10">
         <div
           ref={headerRef}
           className={`flex flex-col md:flex-row items-start md:items-center justify-between mb-10 gap-4 transition-all duration-700 ${

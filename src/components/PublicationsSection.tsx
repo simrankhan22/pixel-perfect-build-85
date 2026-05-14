@@ -46,7 +46,7 @@ const PublicationsSection = () => {
           pubVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
           <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
             <span className="metallic-text">Publications</span>
           </h2>
@@ -86,7 +86,7 @@ const PublicationsSection = () => {
           eduVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
           <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
             <span className="metallic-text">Education</span>
           </h2>

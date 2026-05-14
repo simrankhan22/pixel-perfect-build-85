@@ -9,7 +9,7 @@ const GetInTouch = () => {
       id="get-in-touch"
       className="py-20 px-6 scroll-mt-24 relative"
     >
-      <div ref={ref} className="container mx-auto max-w-3xl relative z-10">
+      <div ref={ref} className="container mx-auto max-w-6xl relative z-10">
         <div
           className={`text-xs uppercase tracking-[0.15em] text-primary mb-2 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"

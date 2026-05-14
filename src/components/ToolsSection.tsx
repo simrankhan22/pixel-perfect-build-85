@@ -53,7 +53,7 @@ const ToolsSection = () => {
 
       <div 
         ref={ref}
-        className={`container mx-auto max-w-5xl relative transition-all duration-700 ${
+        className={`container mx-auto max-w-6xl relative transition-all duration-700 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
