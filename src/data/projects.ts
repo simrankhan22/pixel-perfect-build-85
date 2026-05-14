@@ -7,7 +7,7 @@ export type ProjectStatus =
 export interface ProjectLink {
   label: string;
   href?: string;
-  icon: "external" | "github" | "database";
+  icon: "external" | "github" | "database" | "award";
 }
 
 export interface Project {
@@ -43,6 +43,11 @@ export const completedProjects: Project[] = [
         label: "Kaggle dataset",
         icon: "database",
         href: "https://www.kaggle.com/datasets/simrankhan2002/medimatch-dataset",
+      },
+      {
+        label: "Publication certificate",
+        icon: "award",
+        href: "https://www.linkedin.com/posts/simrankhan23_i-recently-had-the-honor-of-presenting-my-share-7223309708118376448-rx5x",
       },
       {
         label: "GitHub",

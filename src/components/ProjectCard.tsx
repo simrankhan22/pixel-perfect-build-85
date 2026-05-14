@@ -14,6 +14,7 @@ const linkIcon = {
   external: ExternalLink,
   github: Github,
   database: Database,
+  award: Award,
 };
 
 export const ProjectCard = ({
