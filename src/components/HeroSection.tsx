@@ -20,7 +20,7 @@ const HeroSection = () => {
           {/* Gradient background glow - placeholder for profile photo */}
             <div className="absolute -inset-4 bg-gradient-to-br from-primary/40 via-magenta/30 to-purple-mid/50 rounded-full blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500 animate-glow-pulse" />
             <div className="absolute -inset-2 bg-gradient-to-tr from-primary/20 to-lavender/20 rounded-full blur-md" />
-            <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/30 glow-effect bg-gradient-to-br from-primary/20 to-purple-mid/30 hover-lift">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary/30 glow-effect bg-gradient-to-br from-primary/20 to-purple-mid/30 hover-lift">
               <img src={profilePhoto} alt="Simran Khan" className="w-full h-full object-cover" />
             </div>
           </div>
