@@ -39,7 +39,7 @@ const Navigation = () => {
         {navLinks.map((link, index) => {
           const isAnchor = link.type === "anchor";
           const href = isAnchor ? `/#${link.id}` : link.href;
-          const isActive = !isAnchor && location.pathname.startsWith(link.href);
+          const isActive = !isAnchor && (link.href === "/" ? location.pathname === "/" : location.pathname.startsWith(link.href));
           return (
             <a
               key={link.label}
