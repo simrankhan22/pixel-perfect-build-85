@@ -2,11 +2,15 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 
-const navLinks = [
-  { id: "projects", label: "projects" },
-  { id: "skills", label: "skills" },
-  { id: "publications", label: "publications" },
-  { id: "contact", label: "contact" },
+type NavLink =
+  | { type: "route"; href: string; label: string }
+  | { type: "anchor"; id: string; label: string };
+
+const navLinks: NavLink[] = [
+  { type: "route", href: "/projects", label: "projects" },
+  { type: "anchor", id: "skills", label: "skills" },
+  { type: "route", href: "/publications", label: "publications" },
+  { type: "anchor", id: "contact", label: "contact" },
 ];
 
 const Navigation = () => {
@@ -14,7 +18,7 @@ const Navigation = () => {
   const navigate = useNavigate();
   const { theme, setTheme } = useTheme();
 
-  const handleNav = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const handleAnchor = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     if (location.pathname !== "/") {
       navigate(`/#${id}`);
@@ -24,20 +28,34 @@ const Navigation = () => {
     history.replaceState(null, "", `#${id}`);
   };
 
+  const handleRoute = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    navigate(href);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 py-6 bg-background/40 backdrop-blur-md animate-fade-in">
       <div className="container mx-auto px-6 flex items-center justify-center gap-12">
-        {navLinks.map((link, index) => (
-          <a
-            key={link.id}
-            href={`/#${link.id}`}
-            onClick={(e) => handleNav(e, link.id)}
-            className="text-sm font-medium text-foreground hover:text-primary transition-all duration-300 underline-grow"
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
-            {link.label}
-          </a>
-        ))}
+        {navLinks.map((link, index) => {
+          const isAnchor = link.type === "anchor";
+          const href = isAnchor ? `/#${link.id}` : link.href;
+          const isActive = !isAnchor && location.pathname.startsWith(link.href);
+          return (
+            <a
+              key={link.label}
+              href={href}
+              onClick={(e) =>
+                isAnchor ? handleAnchor(e, link.id) : handleRoute(e, link.href)
+              }
+              className={`text-sm font-medium transition-all duration-300 underline-grow ${
+                isActive ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {link.label}
+            </a>
+          );
+        })}
         <button
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           className="p-2 rounded-full bg-primary/10 border border-primary/20 text-foreground hover:bg-primary/20 hover:border-primary/40 transition-all"
