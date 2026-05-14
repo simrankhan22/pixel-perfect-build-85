@@ -19,6 +19,7 @@ type Item = {
   tags: string[];
   impact?: string;
   link?: { url: string; label: string };
+  links?: { url: string; label: string }[];
 };
 
 const timeline: Item[] = [
@@ -28,7 +29,10 @@ const timeline: Item[] = [
     org: "Uppsala University, Sweden",
     desc: "Representing the programme to prospective students globally. Responsibilities include shooting YouTube content for the programme, a written interview published on the university website, and conducting seminars at home universities in India.",
     tags: ["content creation", "public speaking", "international outreach"],
-    link: { url: "https://lnkd.in/dAAQCn7n", label: "Read interview on Uppsala University" },
+    links: [
+      { url: "https://lnkd.in/dAAQCn7n", label: "Read interview on Uppsala University" },
+      { url: "https://drive.google.com/file/d/1eILmQfMQQ5y2mA040SXt8ilAxcFotgf1/view", label: "View certificate" },
+    ],
   },
   {
     title: "MER — CLICK2026 Social Media",
@@ -156,17 +160,20 @@ const BeyondTheCode = () => {
                         {item.impact}
                       </div>
                     )}
-                    {item.link && (
-                      <div className="mt-3">
-                        <a
-                          href={item.link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
-                        >
-                          {item.link.label}
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
+                    {(item.link || item.links) && (
+                      <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
+                        {[...(item.link ? [item.link] : []), ...(item.links ?? [])].map((l) => (
+                          <a
+                            key={l.url}
+                            href={l.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
+                          >
+                            {l.label}
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        ))}
                       </div>
                     )}
                   </div>

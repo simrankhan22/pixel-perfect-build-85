@@ -17,7 +17,7 @@ const publications = [
   },
 ];
 
-type Cert = { issuer: string; name: string; badge?: string; meta?: string; highlight?: boolean };
+type Cert = { issuer: string; name: string; badge?: string; meta?: string; highlight?: boolean; link?: string };
 
 const certificateGroups: { title: string; icon: typeof Cpu; items: Cert[] }[] = [
   {
@@ -25,27 +25,27 @@ const certificateGroups: { title: string; icon: typeof Cpu; items: Cert[] }[] = 
     icon: Cpu,
     items: [
       { issuer: "Internshala", name: "Machine Learning Training", badge: "core skill", highlight: true },
-      { issuer: "Internshala", name: "Programming with Python", badge: "core skill", highlight: true },
+      { issuer: "Internshala", name: "Programming with Python", badge: "core skill", highlight: true, link: "https://trainings.internshala.com/certificate/view/nsdc/gajvfxv36w7/4u2ehzeatna/" },
       { issuer: "Infosys", name: "R Programming", badge: "data science" },
-      { issuer: "IEEE", name: "Research Paper Presentation — MediMatch", badge: "published" },
+      { issuer: "IEEE", name: "Research Paper Presentation — MediMatch", badge: "published", link: "https://www.linkedin.com/posts/simrankhan23_i-recently-had-the-honor-of-presenting-my-share-7223309708118376448-rx5x" },
     ],
   },
   {
     title: "Programming & Development",
     icon: Terminal,
     items: [
-      { issuer: "IIT Bombay", name: "Java Training" },
-      { issuer: "IIT Bombay", name: "C Training" },
-      { issuer: "IIT Bombay", name: "Python 3.4.3 Training" },
-      { issuer: "Achievement Cert", name: "Android Fundamentals with Capstone Project" },
+      { issuer: "IIT Bombay", name: "Java Training", link: "https://drive.google.com/file/d/1V7ci87a6naWvDu14dSsOWUDmVigGNsIJ/view" },
+      { issuer: "IIT Bombay", name: "C Training", link: "https://drive.google.com/file/d/1UeGVM7kwZA22t4s4mt_Yab4PdJa9HM8q/view" },
+      { issuer: "IIT Bombay", name: "Python 3.4.3 Training", link: "https://drive.google.com/file/d/1UhQ-BpKRWP9oIglbQ9TpYW6yF_BEpNTr/view" },
+      { issuer: "Achievement Cert", name: "Android Fundamentals with Capstone Project", link: "https://drive.google.com/file/d/1OQH6GSaJ_Dal-Y6UYxth88cJs47GjZA2/view" },
     ],
   },
   {
     title: "Web & Security",
     icon: Globe,
     items: [
-      { issuer: "Achievement Cert", name: "HTML Level 1" },
-      { issuer: "Achievement Cert", name: "CSS Level 1" },
+      { issuer: "Achievement Cert", name: "HTML Level 1", link: "https://drive.google.com/file/d/1rHDq95UE2j70X4drHsKnVsvRoOeIj_FC/view" },
+      { issuer: "Achievement Cert", name: "CSS Level 1", link: "https://drive.google.com/file/d/1ryOfzU99_LxY4lG5tJxzD-F0Zo8HS9D9/view" },
       { issuer: "Digital Forensics", name: "Digital Forensic Techniques & Investigation Approaches", badge: "cybersecurity" },
     ],
   },
@@ -53,7 +53,7 @@ const certificateGroups: { title: string; icon: typeof Cpu; items: Cert[] }[] = 
     title: "Language",
     icon: Languages,
     items: [
-      { issuer: "Cambridge English", name: "Entry Level Certificate in ESOL International", meta: "C1 Proficiency" },
+      { issuer: "Cambridge English", name: "Entry Level Certificate in ESOL International", meta: "C1 Proficiency", link: "https://drive.google.com/file/d/149aG1WkCsrCKtHAHo0rTYpI6zm-HbpaF/view" },
       { issuer: "IELTS", name: "International English Language Testing System", meta: "Overall Band Score: 7" },
     ],
   },
@@ -149,34 +149,42 @@ const PublicationsSection = () => {
                   <div className="flex-1 h-px bg-border/60" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                  {group.items.map((cert) => (
-                    <div
-                      key={cert.name}
-                      className={`group rounded-xl border bg-primary/5 backdrop-blur-sm p-4 transition-all duration-300 hover:bg-primary/10 hover:-translate-y-0.5 ${
-                        cert.highlight
-                          ? "border-primary/40 hover:border-primary/60"
-                          : "border-primary/15 hover:border-primary/40"
-                      }`}
-                    >
-                      <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-wide text-muted-foreground mb-1.5">
-                        <Award className="w-3 h-3" />
-                        {cert.issuer}
-                      </div>
-                      <div className="text-sm font-medium text-foreground leading-snug group-hover:text-primary transition-colors">
-                        {cert.name}
-                      </div>
-                      {cert.meta && (
-                        <div className="text-[11px] text-muted-foreground mt-1.5">
-                          {cert.meta}
+                  {group.items.map((cert) => {
+                    const Tag = cert.link ? "a" : "div";
+                    const linkProps = cert.link
+                      ? { href: cert.link, target: "_blank", rel: "noopener noreferrer" }
+                      : {};
+                    return (
+                      <Tag
+                        key={cert.name}
+                        {...linkProps}
+                        className={`group block rounded-xl border bg-primary/5 backdrop-blur-sm p-4 transition-all duration-300 hover:bg-primary/10 hover:-translate-y-0.5 ${
+                          cert.highlight
+                            ? "border-primary/40 hover:border-primary/60"
+                            : "border-primary/15 hover:border-primary/40"
+                        }`}
+                      >
+                        <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-wide text-muted-foreground mb-1.5">
+                          <Award className="w-3 h-3" />
+                          {cert.issuer}
                         </div>
-                      )}
-                      {cert.badge && (
-                        <span className="inline-block mt-2 text-[10px] font-medium px-2 py-0.5 rounded-full border border-primary/30 bg-primary/10 text-primary uppercase tracking-wide">
-                          {cert.badge}
-                        </span>
-                      )}
-                    </div>
-                  ))}
+                        <div className="text-sm font-medium text-foreground leading-snug group-hover:text-primary transition-colors flex items-start gap-1.5">
+                          <span>{cert.name}</span>
+                          {cert.link && <ExternalLink className="w-3 h-3 mt-1 flex-shrink-0 opacity-60 group-hover:opacity-100" />}
+                        </div>
+                        {cert.meta && (
+                          <div className="text-[11px] text-muted-foreground mt-1.5">
+                            {cert.meta}
+                          </div>
+                        )}
+                        {cert.badge && (
+                          <span className="inline-block mt-2 text-[10px] font-medium px-2 py-0.5 rounded-full border border-primary/30 bg-primary/10 text-primary uppercase tracking-wide">
+                            {cert.badge}
+                          </span>
+                        )}
+                      </Tag>
+                    );
+                  })}
                 </div>
               </div>
             ))}
