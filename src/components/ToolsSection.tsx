@@ -100,7 +100,7 @@ const ToolsSection = () => {
         </div>
 
         {/* SVG with connecting lines and planet */}
-        <div className="relative h-[400px] flex items-center justify-center">
+        <div className="relative h-[260px] sm:h-[340px] md:h-[400px] flex items-center justify-center">
           <svg 
             viewBox="0 0 800 400" 
             className="w-full h-full absolute inset-0"

@@ -58,7 +58,7 @@ const Navigation = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 py-6 animate-fade-in transition-[background-color,backdrop-filter,border-color] duration-300 ease-out"
+      className="fixed top-0 left-0 right-0 z-50 py-4 sm:py-6 animate-fade-in transition-[background-color,backdrop-filter,border-color] duration-300 ease-out"
       style={{
         backgroundColor: `hsl(265 64% 5% / ${bgAlpha})`,
         backdropFilter: `blur(${blurPx}px)`,
@@ -66,7 +66,7 @@ const Navigation = () => {
         borderBottom: `1px solid hsl(var(--border) / ${borderAlpha})`,
       }}
     >
-      <div className="container mx-auto px-6 flex items-center justify-center gap-12">
+      <div className="container mx-auto px-4 sm:px-6 flex items-center justify-center gap-4 sm:gap-8 md:gap-12 overflow-x-auto">
         {navLinks.map((link, index) => {
           const isAnchor = link.type === "anchor";
           const href = isAnchor ? `/#${link.id}` : link.href;
@@ -78,7 +78,7 @@ const Navigation = () => {
               onClick={(e) =>
                 isAnchor ? handleAnchor(e, link.id) : handleRoute(e, link.href)
               }
-              className={`text-sm font-medium transition-all duration-300 underline-grow ${
+              className={`text-sm font-medium whitespace-nowrap transition-all duration-300 underline-grow ${
                 isActive ? "text-primary" : "text-foreground hover:text-primary"
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}

@@ -6,7 +6,7 @@ const HeroSection = () => {
   const { ref: aboutRef, isVisible: aboutVisible } = useScrollAnimation();
 
   return (
-    <section className="pt-32 pb-20 px-6 relative overflow-hidden">
+    <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 px-6 relative overflow-hidden">
       <div className="container mx-auto max-w-4xl relative">
         {/* Hero Header */}
         <div 
@@ -20,7 +20,7 @@ const HeroSection = () => {
           {/* Gradient background glow - placeholder for profile photo */}
             <div className="absolute -inset-4 bg-gradient-to-br from-primary/40 via-magenta/30 to-purple-mid/50 rounded-full blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500 animate-glow-pulse" />
             <div className="absolute -inset-2 bg-gradient-to-tr from-primary/20 to-lavender/20 rounded-full blur-md" />
-            <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/30 glow-effect bg-gradient-to-br from-primary/20 to-purple-mid/30 hover-lift">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary/30 glow-effect bg-gradient-to-br from-primary/20 to-purple-mid/30 hover-lift">
               <img src={profilePhoto} alt="Simran Khan" className="w-full h-full object-cover" />
             </div>
           </div>
@@ -32,7 +32,7 @@ const HeroSection = () => {
               Hello! I Am <span className="text-gradient font-semibold shimmer-text">Simran Khan</span>
             </p>
             <p className="text-muted-foreground text-sm mb-1">A Developer who is</p>
-            <h1 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground leading-tight">
               passionate about data<br />
               & its impact on <span className="text-gradient underline decoration-primary underline-offset-4 hover:decoration-2 transition-all">AI/ML...</span>
             </h1>
