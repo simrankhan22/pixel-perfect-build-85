@@ -60,7 +60,15 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 py-6 bg-[hsl(265_64%_5%/0.7)] backdrop-blur-lg border-b border-border/20 animate-fade-in">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 py-6 animate-fade-in transition-[background-color,backdrop-filter,border-color] duration-300 ease-out"
+      style={{
+        backgroundColor: `hsl(265 64% 5% / ${bgAlpha})`,
+        backdropFilter: `blur(${blurPx}px)`,
+        WebkitBackdropFilter: `blur(${blurPx}px)`,
+        borderBottom: `1px solid hsl(var(--border) / ${borderAlpha})`,
+      }}
+    >
       <div className="container mx-auto px-6 flex items-center justify-center gap-12">
         {navLinks.map((link, index) => {
           const isAnchor = link.type === "anchor";
