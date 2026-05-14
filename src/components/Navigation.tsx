@@ -34,7 +34,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 py-6 bg-[hsl(265_64%_4%/0.85)] backdrop-blur-md border-b border-border/30 animate-fade-in">
+    <nav className="fixed top-0 left-0 right-0 z-50 py-6 bg-[hsl(265_70%_2%/0.97)] backdrop-blur-xl border-b border-border/40 shadow-lg shadow-black/30 animate-fade-in">
       <div className="container mx-auto px-6 flex items-center justify-center gap-12">
         {navLinks.map((link, index) => {
           const isAnchor = link.type === "anchor";
