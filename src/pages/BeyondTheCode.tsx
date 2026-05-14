@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import ContactSection from "@/components/ContactSection";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Award, Users, Globe, Calendar } from "lucide-react";
+import { Award, Users, Globe, Calendar, ExternalLink } from "lucide-react";
 
 const stats = [
   { num: "40+", label: "team members led", icon: Users },
@@ -18,6 +18,7 @@ type Item = {
   desc: string;
   tags: string[];
   impact?: string;
+  link?: { url: string; label: string };
 };
 
 const timeline: Item[] = [
@@ -27,6 +28,7 @@ const timeline: Item[] = [
     org: "Uppsala University, Sweden",
     desc: "Representing the programme to prospective students globally. Responsibilities include shooting YouTube content for the programme, a written interview published on the university website, and conducting seminars at home universities in India.",
     tags: ["content creation", "public speaking", "international outreach"],
+    link: { url: "https://lnkd.in/dAAQCn7n", label: "Read interview on Uppsala University" },
   },
   {
     title: "MER — CLICK2026 Social Media",
@@ -41,6 +43,7 @@ const timeline: Item[] = [
     org: "SAKEC Alumni Association, Mumbai",
     desc: "Led a team of 40 members to manage alumni communications across the world. Responsible for strategic planning, persuasive communication, and executing a high-impact social media portfolio that kept global alumni engaged with the institution.",
     tags: ["team leadership · 40 members", "global outreach", "strategic planning"],
+    link: { url: "https://www.instagram.com/stories/highlights/18070858129648815/", label: "View highlights on Instagram" },
   },
   {
     title: "Digital Media Head",
@@ -49,6 +52,7 @@ const timeline: Item[] = [
     desc: "Led a 20-member digital media team. Managed the full content lifecycle — strategy, creation, scheduling, and performance analysis — across all social platforms.",
     tags: ["team leadership · 20 members", "digital marketing", "campaign performance"],
     impact: "Letter of commendation — outstanding contribution",
+    link: { url: "https://www.instagram.com/p/CrnJ9AmIFzW/", label: "View campaign on Instagram" },
   },
 ];
 
@@ -150,6 +154,19 @@ const BeyondTheCode = () => {
                       <div className="mt-3 inline-flex items-center gap-1.5 text-xs text-foreground/80 bg-primary/10 border border-primary/30 px-3 py-1 rounded-full">
                         <Award className="w-3 h-3 text-primary" />
                         {item.impact}
+                      </div>
+                    )}
+                    {item.link && (
+                      <div className="mt-3">
+                        <a
+                          href={item.link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
+                        >
+                          {item.link.label}
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
                       </div>
                     )}
                   </div>
