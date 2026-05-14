@@ -32,21 +32,27 @@ const HeroSection = () => {
             <svg
               aria-hidden="true"
               viewBox="0 0 180 100"
-              className="hidden md:block absolute -left-40 -top-4 w-40 h-20 text-primary pointer-events-none opacity-85"
+              preserveAspectRatio="xMidYMid meet"
+              className="hidden md:block absolute pointer-events-none opacity-85 text-primary
+                         md:-left-32 md:-top-3 md:w-32 md:h-16
+                         lg:-left-40 lg:-top-4 lg:w-40 lg:h-20
+                         xl:-left-48 xl:-top-5 xl:w-48 xl:h-24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.4"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
               <path
                 d="M170 12 C 130 2, 75 8, 50 38 C 38 52, 32 70, 38 86"
                 strokeDasharray="4 5"
+                vectorEffect="non-scaling-stroke"
                 className={heroVisible ? 'animate-fade-in' : ''}
                 style={{ animationDelay: '0.6s' }}
               />
               <path
                 d="M38 86 L 26 78 M38 86 L 48 74"
+                vectorEffect="non-scaling-stroke"
                 className={heroVisible ? 'animate-fade-in' : ''}
                 style={{ animationDelay: '0.9s' }}
               />
