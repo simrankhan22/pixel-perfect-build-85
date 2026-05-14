@@ -1,5 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { FileText, ExternalLink, GraduationCap, Database } from "lucide-react";
+import { FileText, ExternalLink, GraduationCap, Database, Cpu, Terminal, Globe, Languages, Award } from "lucide-react";
 
 const publications = [
   {
@@ -14,6 +14,47 @@ const publications = [
     citation: "Khan, Simran (2023). MediMatch dataset on Kaggle.",
     linkLabel: "View on Kaggle",
     link: "https://www.kaggle.com/datasets/simrankhan2002/medimatch-dataset",
+  },
+];
+
+type Cert = { issuer: string; name: string; badge?: string; meta?: string; highlight?: boolean };
+
+const certificateGroups: { title: string; icon: typeof Cpu; items: Cert[] }[] = [
+  {
+    title: "Machine Learning & AI",
+    icon: Cpu,
+    items: [
+      { issuer: "Internshala", name: "Machine Learning Training", badge: "core skill", highlight: true },
+      { issuer: "Internshala", name: "Programming with Python", badge: "core skill", highlight: true },
+      { issuer: "Infosys", name: "R Programming", badge: "data science" },
+      { issuer: "IEEE", name: "Research Paper Presentation — MediMatch", badge: "published" },
+    ],
+  },
+  {
+    title: "Programming & Development",
+    icon: Terminal,
+    items: [
+      { issuer: "IIT Bombay", name: "Java Training" },
+      { issuer: "IIT Bombay", name: "C Training" },
+      { issuer: "IIT Bombay", name: "Python 3.4.3 Training" },
+      { issuer: "Achievement Cert", name: "Android Fundamentals with Capstone Project" },
+    ],
+  },
+  {
+    title: "Web & Security",
+    icon: Globe,
+    items: [
+      { issuer: "Achievement Cert", name: "HTML Level 1" },
+      { issuer: "Achievement Cert", name: "CSS Level 1" },
+      { issuer: "Digital Forensics", name: "Digital Forensic Techniques & Investigation Approaches", badge: "cybersecurity" },
+    ],
+  },
+  {
+    title: "Language",
+    icon: Languages,
+    items: [
+      { issuer: "Cambridge English", name: "Entry Level Certificate in ESOL International", meta: "C1 Proficiency" },
+    ],
   },
 ];
 
@@ -35,7 +76,9 @@ const education = [
 
 const PublicationsSection = () => {
   const { ref: pubRef, isVisible: pubVisible } = useScrollAnimation();
+  const { ref: certRef, isVisible: certVisible } = useScrollAnimation();
   const { ref: eduRef, isVisible: eduVisible } = useScrollAnimation();
+
 
   return (
     <>
