@@ -50,20 +50,22 @@ const Navigation = () => {
     }
   };
 
-  // After route change to /, honor pending hash by scrolling.
-  useEffect(() => {
-    if (location.pathname === "/" && location.hash) {
-      const id = location.hash.slice(1);
-      // Wait a tick for the target section to mount.
-      const t = setTimeout(() => scrollToId(id), 50);
-      return () => clearTimeout(t);
-    }
-  }, [location.pathname, location.hash]);
-
   const handleAnchor = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     if (location.pathname !== "/") {
-      navigate(`/#${id}`);
+      navigate("/");
+      // Wait for Index to mount, then scroll.
+      const start = Date.now();
+      const tryScroll = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          history.replaceState(null, "", `#${id}`);
+        } else if (Date.now() - start < 1500) {
+          requestAnimationFrame(tryScroll);
+        }
+      };
+      requestAnimationFrame(tryScroll);
       return;
     }
     scrollToId(id);
