@@ -50,14 +50,21 @@ export const ProjectCard = ({
         <h3 className="text-base md:text-lg font-medium text-foreground leading-snug">
           {project.title}
         </h3>
-        <span
-          className={cn(
-            "text-[11px] px-2.5 py-1 rounded-full whitespace-nowrap flex-shrink-0",
-            statusPillClass[project.status]
+        <div className="flex flex-wrap gap-1.5 justify-end flex-shrink-0">
+          {project.status !== "in-progress" && project.status !== "completed" && (
+            <span className="text-[11px] px-2.5 py-1 rounded-full whitespace-nowrap bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+              completed
+            </span>
           )}
-        >
-          {project.statusLabel}
-        </span>
+          <span
+            className={cn(
+              "text-[11px] px-2.5 py-1 rounded-full whitespace-nowrap",
+              statusPillClass[project.status]
+            )}
+          >
+            {project.statusLabel}
+          </span>
+        </div>
       </header>
       <p className="text-sm text-muted-foreground leading-relaxed mb-3">
         {project.description}
