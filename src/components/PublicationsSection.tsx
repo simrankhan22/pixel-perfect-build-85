@@ -21,11 +21,13 @@ const education = [
   {
     degree: "MSc Data Science: Data Engineering",
     school: "Uppsala University",
+    schoolLink: "https://www.uu.se/en",
     period: "2025 – present",
   },
   {
     degree: "B.E. Computer Engineering",
     school: "SAKEC",
+    schoolLink: "https://www.sakec.ac.in/",
     period: "2020 – 2024",
     detail: "GPA 8.44 / 10",
   },
