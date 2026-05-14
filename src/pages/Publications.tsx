@@ -19,7 +19,7 @@ const Publications = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="container mx-auto max-w-4xl">
+          <div className="container mx-auto max-w-6xl">
             <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-6 leading-tight">
               Publications
             </h1>

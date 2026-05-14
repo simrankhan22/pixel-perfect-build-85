@@ -28,7 +28,7 @@ const Projects = () => {
               : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="container mx-auto max-w-3xl">
+          <div className="container mx-auto max-w-6xl">
             <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4 leading-tight">
               Projects
             </h1>
@@ -52,13 +52,13 @@ const Projects = () => {
         </section>
 
         <section className="px-6">
-          <div className="container mx-auto max-w-3xl space-y-4">
+          <div className="container mx-auto max-w-6xl space-y-4">
             {completedProjects.map((project, i) => (
               <ProjectCard key={project.id} project={project} index={i} />
             ))}
           </div>
 
-          <div className="container mx-auto max-w-3xl">
+          <div className="container mx-auto max-w-6xl">
             <RoadmapDivider />
             <div className="space-y-3">
               {roadmap.map((item, i) => (
