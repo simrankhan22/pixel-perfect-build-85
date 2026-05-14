@@ -1,6 +1,5 @@
-import { Mail } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Button } from "@/components/ui/button";
 
 const GetInTouch = () => {
   const { ref, isVisible } = useScrollAnimation();
