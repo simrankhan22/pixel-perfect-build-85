@@ -32,7 +32,7 @@ const HeroSection = () => {
             <svg
               aria-hidden="true"
               viewBox="0 0 160 110"
-              className="hidden md:block absolute -left-24 -top-2 w-32 h-24 text-primary pointer-events-none opacity-80"
+              className="hidden md:block absolute -left-28 -top-10 w-32 h-20 text-primary pointer-events-none opacity-80"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
