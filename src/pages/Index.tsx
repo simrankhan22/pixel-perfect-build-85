@@ -17,9 +17,20 @@ const Index = () => {
     const id = location.hash.slice(1);
     // Wait a frame for sections to render
     requestAnimationFrame(() => {
-      document
-        .getElementById(id)
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Trigger highlight after the smooth scroll roughly settles
+      window.setTimeout(() => {
+        el.classList.remove("section-highlight");
+        // force reflow so the animation can replay if re-triggered
+        void el.offsetWidth;
+        el.classList.add("section-highlight");
+        window.setTimeout(
+          () => el.classList.remove("section-highlight"),
+          2400
+        );
+      }, 600);
     });
   }, [location.hash, location.key]);
 
