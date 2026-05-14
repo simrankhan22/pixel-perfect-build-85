@@ -54,7 +54,7 @@ const ContactSection = () => {
         </div>
         
         {/* Bottom bar */}
-        <div className={`mt-12 pt-6 border-t border-border/20 flex flex-col md:flex-row justify-between items-center gap-4 ${isVisible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.4s' }}>
+        <div className={`mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 ${isVisible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.4s' }}>
           <p className="text-xs text-muted-foreground">
             © 2025 Simran Khan. All rights reserved.
           </p>
