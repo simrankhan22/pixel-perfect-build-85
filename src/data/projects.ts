@@ -7,7 +7,7 @@ export type ProjectStatus =
 export interface ProjectLink {
   label: string;
   href?: string;
-  icon: "external" | "github" | "database";
+  icon: "external" | "github" | "database" | "award";
 }
 
 export interface Project {
