@@ -6,14 +6,14 @@ const publications = [
     icon: FileText,
     citation:
       'Khan, Simran (2024). "MediMatch: AI-Driven Drug Recommendation System." ICSCSS 2024, pp. 1342–1349.',
-    linkLabel: "Link to DOI",
-    link: "#",
+    linkLabel: "View on IEEE Xplore",
+    link: "https://ieeexplore.ieee.org/document/10625049",
   },
   {
     icon: Database,
     citation: "Khan, Simran (2023). MediMatch dataset on Kaggle.",
     linkLabel: "View on Kaggle",
-    link: "#",
+    link: "https://www.kaggle.com/datasets/simrankhan2002/medimatch-dataset",
   },
 ];
 
