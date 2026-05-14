@@ -9,6 +9,7 @@ import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import Publications from "./pages/Publications";
 import NotFound from "./pages/NotFound";
+import CursorGlow from "./components/CursorGlow";
 
 const queryClient = new QueryClient();
 
