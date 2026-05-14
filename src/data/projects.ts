@@ -20,6 +20,7 @@ export interface Project {
   tags: string[];
   links?: ProjectLink[];
   relevantTo?: string[];
+  partner?: { name: string; href: string };
 }
 
 export const completedProjects: Project[] = [
