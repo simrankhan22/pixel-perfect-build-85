@@ -42,14 +42,31 @@ const Navigation = () => {
   const blurPx = 4 + scrollProgress * 12; // 4 → 16
   const borderAlpha = scrollProgress * 0.25;
 
+  const scrollToId = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.replaceState(null, "", `#${id}`);
+    }
+  };
+
+  // After route change to /, honor pending hash by scrolling.
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash) {
+      const id = location.hash.slice(1);
+      // Wait a tick for the target section to mount.
+      const t = setTimeout(() => scrollToId(id), 50);
+      return () => clearTimeout(t);
+    }
+  }, [location.pathname, location.hash]);
+
   const handleAnchor = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     if (location.pathname !== "/") {
       navigate(`/#${id}`);
       return;
     }
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    history.replaceState(null, "", `#${id}`);
+    scrollToId(id);
   };
 
   const handleRoute = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
