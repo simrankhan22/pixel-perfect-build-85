@@ -17,7 +17,7 @@ const Index = () => {
         <FeaturedProjects />
         <ToolsSection />
         <AboutSection />
-        
+        <GetInTouch />
       </main>
       <ContactSection />
     </div>
