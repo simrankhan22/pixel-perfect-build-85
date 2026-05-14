@@ -6,7 +6,7 @@ const HeroSection = () => {
   const { ref: aboutRef, isVisible: aboutVisible } = useScrollAnimation();
 
   return (
-    <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 px-6 relative overflow-hidden">
+    <section className="pt-24 sm:pt-32 pb-4 px-6 relative overflow-hidden">
       <div className="container mx-auto max-w-6xl relative">
         {/* Hero Header */}
         <div 
@@ -42,7 +42,7 @@ const HeroSection = () => {
         {/* About Section */}
         <div 
           ref={aboutRef}
-          className={`mb-16 transition-all duration-700 delay-200 ${
+          className={`mb-0 transition-all duration-700 delay-200 ${
             aboutVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
