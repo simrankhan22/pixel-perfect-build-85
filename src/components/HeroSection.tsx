@@ -27,7 +27,30 @@ const HeroSection = () => {
           
           
           {/* Intro Text */}
-          <div className={`text-center md:text-left md:ml-8 md:pt-8 ${heroVisible ? 'stagger-children' : ''}`}>
+          <div className={`relative text-center md:text-left md:ml-8 md:pt-8 ${heroVisible ? 'stagger-children' : ''}`}>
+            {/* Doodle arrow connecting greeting to profile photo (desktop only) */}
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 160 110"
+              className="hidden md:block absolute -left-24 -top-2 w-32 h-24 text-primary pointer-events-none opacity-80"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path
+                d="M150 18 C 110 6, 70 18, 45 50 C 32 66, 24 84, 22 96"
+                strokeDasharray="4 5"
+                className={heroVisible ? 'animate-fade-in' : ''}
+                style={{ animationDelay: '0.6s' }}
+              />
+              <path
+                d="M22 96 L 14 82 M22 96 L 36 90"
+                className={heroVisible ? 'animate-fade-in' : ''}
+                style={{ animationDelay: '0.9s' }}
+              />
+            </svg>
             <p className="text-sm text-muted-foreground mb-2">
               Hello! I Am <span className="text-gradient font-semibold shimmer-text">Simran Khan</span>
             </p>
