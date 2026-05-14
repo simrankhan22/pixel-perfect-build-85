@@ -58,9 +58,6 @@ const ContactSection = () => {
           <p className="text-xs text-muted-foreground">
             © 2025 Simran Khan. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground">
-            Designed with <span className="text-primary animate-pulse-slow">♥</span> in Sweden
-          </p>
         </div>
       </div>
     </footer>
