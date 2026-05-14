@@ -18,6 +18,31 @@ const Navigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { theme, setTheme } = useTheme();
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      // 0 at top → 1 after 240px scrolled
+      const p = Math.min(window.scrollY / 240, 1);
+      setScrollProgress(p);
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  // Interpolate: top = nearly transparent, scrolled = darker tint that blends
+  const bgAlpha = 0.15 + scrollProgress * 0.55; // 0.15 → 0.7
+  const blurPx = 4 + scrollProgress * 12; // 4 → 16
+  const borderAlpha = scrollProgress * 0.25;
 
   const handleAnchor = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
