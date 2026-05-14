@@ -1,11 +1,41 @@
+import { useEffect, useRef } from "react";
 import { Mail, Linkedin, Github } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const GetInTouch = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const hasGlowedRef = useRef(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || hasGlowedRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasGlowedRef.current) {
+            hasGlowedRef.current = true;
+            el.classList.remove("section-highlight");
+            void el.offsetWidth;
+            el.classList.add("section-highlight");
+            window.setTimeout(
+              () => el.classList.remove("section-highlight"),
+              2400
+            );
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
+      ref={sectionRef}
       id="get-in-touch"
       className="py-20 px-6 scroll-mt-24 relative"
     >

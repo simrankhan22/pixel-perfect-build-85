@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
@@ -12,18 +12,29 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 const Index = () => {
   const location = useLocation();
 
+  const isInitialMount = useRef(true);
+
   useEffect(() => {
+    // On the very first render, ignore any pre-existing hash so the page
+    // always opens at the top instead of jumping to e.g. #get-in-touch.
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      // Strip the hash so a refresh doesn't keep auto-scrolling.
+      if (location.hash) {
+        window.history.replaceState(null, "", location.pathname + location.search);
+        window.scrollTo({ top: 0, behavior: "auto" });
+      }
+      return;
+    }
+
     if (!location.hash) return;
     const id = location.hash.slice(1);
-    // Wait a frame for sections to render
     requestAnimationFrame(() => {
       const el = document.getElementById(id);
       if (!el) return;
       el.scrollIntoView({ behavior: "smooth", block: "start" });
-      // Trigger highlight after the smooth scroll roughly settles
       window.setTimeout(() => {
         el.classList.remove("section-highlight");
-        // force reflow so the animation can replay if re-triggered
         void el.offsetWidth;
         el.classList.add("section-highlight");
         window.setTimeout(
@@ -32,7 +43,7 @@ const Index = () => {
         );
       }, 600);
     });
-  }, [location.hash, location.key]);
+  }, [location.hash, location.key, location.pathname, location.search]);
 
   return (
     <div className="min-h-screen bg-background relative">
