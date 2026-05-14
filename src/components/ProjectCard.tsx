@@ -69,6 +69,19 @@ export const ProjectCard = ({
       <p className="text-sm text-muted-foreground leading-relaxed mb-3">
         {project.description}
       </p>
+      {project.partner && (
+        <p className="text-xs text-muted-foreground mb-3">
+          Built for{" "}
+          <a
+            href={project.partner.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary/80 underline-offset-2 hover:underline transition-colors"
+          >
+            {project.partner.name}
+          </a>
+        </p>
+      )}
       <div className="flex flex-wrap gap-1.5 mb-3">
         {project.tags.map((tag) => (
           <span

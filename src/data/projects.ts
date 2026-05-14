@@ -20,6 +20,7 @@ export interface Project {
   tags: string[];
   links?: ProjectLink[];
   relevantTo?: string[];
+  partner?: { name: string; href: string };
 }
 
 export const completedProjects: Project[] = [
@@ -73,6 +74,7 @@ export const completedProjects: Project[] = [
       "AI system that takes business information as input, cross-references it with publicly available online data, then places a real phone call to the business to confirm accuracy. Built with ElevenLabs speech synthesis and a telephony cell API for automated voice outreach.",
     status: "hackathon",
     statusLabel: "hackathon · grant project",
+    partner: { name: "Grant Thornton", href: "https://www.grantthornton.se/en/" },
     tags: ["ElevenLabs API", "Telephony API", "Python", "Voice AI"],
     links: [
       {
@@ -116,6 +118,7 @@ export const completedProjects: Project[] = [
       "Speech-to-response pipeline handling 10+ distinct customer service query types. Integrated ElevenLabs for real-time natural voice synthesis. Built end-to-end in 48 hours.",
     status: "hackathon",
     statusLabel: "48h hackathon",
+    partner: { name: "Impact Solution", href: "https://www.impactsolution.se/" },
     tags: ["ElevenLabs API", "Voice AI", "Python"],
     links: [
       {
