@@ -90,13 +90,6 @@ const Navigation = () => {
             </a>
           );
         })}
-        <button
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="p-2 rounded-full bg-primary/10 border border-primary/20 text-foreground hover:bg-primary/20 hover:border-primary/40 transition-all"
-          aria-label="Toggle theme"
-        >
-          {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-        </button>
       </div>
     </nav>
   );
