@@ -31,7 +31,7 @@ export const completedProjects: Project[] = [
       "Built a hand-labeled dataset of 4,000+ entries across 25+ Ayurvedic symptom features. Trained Random Forest and SVM models with custom feature engineering pipelines and rigorous hyperparameter tuning. Presented and published at IEEE ICSCSS 2024.",
     status: "ieee",
     statusLabel: "IEEE ICSCSS 2024",
-    featured: true,
+    featured: false,
     tags: ["Python", "Scikit-learn", "Random Forest", "SVM", "Kaggle dataset"],
     links: [
       {
