@@ -25,7 +25,7 @@ const AboutSection = () => {
   const { ref: interestsRef, isVisible: interestsVisible } = useScrollAnimation();
 
   return (
-    <div className="py-12 relative z-10">
+    <div className="py-20 relative z-10">
       <section
         id="skills"
         ref={skillsRef}
