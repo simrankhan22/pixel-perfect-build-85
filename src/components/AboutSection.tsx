@@ -1,6 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { ChevronLeft, ChevronRight, Award, Trophy, Star, Palette, Music, Camera, Plane, BookOpen, Gamepad2, CookingPot, Mountain, Code, Heart } from "lucide-react";
-import { useState, useRef } from "react";
+import { Palette, Music, Camera, Plane, BookOpen, Gamepad2, CookingPot, Mountain, Code, Heart } from "lucide-react";
 
 const skills = [
   { name: "Python (Pandas, NumPy)", rating: 5 },
