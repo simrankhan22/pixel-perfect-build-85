@@ -1,9 +1,10 @@
 import Navigation from "@/components/Navigation";
 import ContactSection from "@/components/ContactSection";
 import AnimatedBackground from "@/components/AnimatedBackground";
-import { Snowflake } from "lucide-react";
+import { Snowflake, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Button } from "@/components/ui/button";
 
 const projects = [
   {
