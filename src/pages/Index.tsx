@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ToolsSection from "@/components/ToolsSection";
 import FeaturedProjects from "@/components/FeaturedProjects";
-
+import GetInTouch from "@/components/GetInTouch";
 import ContactSection from "@/components/ContactSection";
 import AnimatedBackground from "@/components/AnimatedBackground";
 
