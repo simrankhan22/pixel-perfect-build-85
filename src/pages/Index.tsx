@@ -13,9 +13,9 @@ const Index = () => {
       <Navigation />
       <main className="relative z-10">
         <HeroSection />
-        <AboutSection />
         <ToolsSection />
         <FeaturedProjects />
+        <AboutSection />
       </main>
       <ContactSection />
     </div>
