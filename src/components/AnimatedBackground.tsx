@@ -7,22 +7,6 @@ const AnimatedBackground = () => {
       <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-purple-mid/15 rounded-full blur-[120px] animate-float-slow" style={{ animationDelay: '4s' }} />
       <div className="absolute bottom-0 right-1/3 w-[450px] h-[450px] bg-primary/8 rounded-full blur-[140px] animate-float-slow" style={{ animationDelay: '6s' }} />
       
-      {/* Animated particles */}
-      {[...Array(20)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute rounded-full bg-primary/30 animate-twinkle"
-          style={{
-            width: `${2 + Math.random() * 4}px`,
-            height: `${2 + Math.random() * 4}px`,
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 5}s`,
-            animationDuration: `${3 + Math.random() * 4}s`,
-          }}
-        />
-      ))}
-      
       {/* Grid pattern overlay */}
       <div 
         className="absolute inset-0 opacity-[0.02]"
