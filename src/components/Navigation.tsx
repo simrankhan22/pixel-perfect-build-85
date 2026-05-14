@@ -15,7 +15,6 @@ const navLinks: NavLink[] = [
 const Navigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { theme, setTheme } = useTheme();
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
