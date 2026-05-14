@@ -54,6 +54,7 @@ const certificateGroups: { title: string; icon: typeof Cpu; items: Cert[] }[] = 
     icon: Languages,
     items: [
       { issuer: "Cambridge English", name: "Entry Level Certificate in ESOL International", meta: "C1 Proficiency" },
+      { issuer: "IELTS", name: "International English Language Testing System", meta: "Overall Band Score: 7" },
     ],
   },
 ];
