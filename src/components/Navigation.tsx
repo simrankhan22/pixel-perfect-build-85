@@ -7,10 +7,10 @@ type NavLink =
   | { type: "anchor"; id: string; label: string };
 
 const navLinks: NavLink[] = [
-  { type: "route", href: "/projects", label: "projects" },
-  { type: "anchor", id: "skills", label: "skills" },
-  { type: "route", href: "/publications", label: "publications" },
-  { type: "anchor", id: "contact", label: "contact" },
+  { type: "route", href: "/", label: "Home" },
+  { type: "route", href: "/projects", label: "Projects" },
+  { type: "route", href: "/publications", label: "Publications" },
+  { type: "anchor", id: "contact", label: "Contact" },
 ];
 
 const Navigation = () => {
