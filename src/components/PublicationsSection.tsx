@@ -17,7 +17,7 @@ const publications = [
   },
 ];
 
-type Cert = { issuer: string; name: string; badge?: string; meta?: string; highlight?: boolean };
+type Cert = { issuer: string; name: string; badge?: string; meta?: string; highlight?: boolean; link?: string };
 
 const certificateGroups: { title: string; icon: typeof Cpu; items: Cert[] }[] = [
   {
