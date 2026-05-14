@@ -32,7 +32,7 @@ const HeroSection = () => {
               Hello! I Am <span className="text-gradient font-semibold shimmer-text">Simran Khan</span>
             </p>
             <p className="text-muted-foreground text-sm mb-1">A Developer who is</p>
-            <h1 className="text-3xl md:text-4xl font-semibold text-foreground leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground leading-tight">
               passionate about data<br />
               & its impact on <span className="text-gradient underline decoration-primary underline-offset-4 hover:decoration-2 transition-all">AI/ML...</span>
             </h1>
