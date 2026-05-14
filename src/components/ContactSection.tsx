@@ -12,7 +12,7 @@ const ContactSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <footer id="contact" className="py-16 px-6 scroll-mt-24 relative overflow-hidden bg-[hsl(265_64%_4%)] border-t border-border/30">
+    <footer id="contact" className="py-16 px-6 scroll-mt-24 relative overflow-hidden bg-[hsl(265_64%_5%/0.5)] backdrop-blur-md border-t border-border/10">
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-[100px] animate-pulse-slow" />
