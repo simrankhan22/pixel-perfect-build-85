@@ -1,9 +1,10 @@
 import Navigation from "@/components/Navigation";
 import ContactSection from "@/components/ContactSection";
 import AnimatedBackground from "@/components/AnimatedBackground";
-import { Snowflake } from "lucide-react";
+import { Snowflake, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Button } from "@/components/ui/button";
 
 const projects = [
   {
@@ -126,6 +127,14 @@ const Projects = () => {
               skills. The ongoing projects reflect my commitment to continuous learning
               and professional growth, contributing to my overall industry readiness.
             </p>
+            <div className="mt-8">
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground hover-lift">
+                  <FileText className="mr-2 w-4 h-4" />
+                  View Full Resume
+                </Button>
+              </a>
+            </div>
           </div>
         </section>
         
