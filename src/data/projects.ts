@@ -74,6 +74,7 @@ export const completedProjects: Project[] = [
       "AI system that takes business information as input, cross-references it with publicly available online data, then places a real phone call to the business to confirm accuracy. Built with ElevenLabs speech synthesis and a telephony cell API for automated voice outreach.",
     status: "hackathon",
     statusLabel: "hackathon · grant project",
+    partner: { name: "Grant Thornton", href: "https://www.grantthornton.se/en/" },
     tags: ["ElevenLabs API", "Telephony API", "Python", "Voice AI"],
     links: [
       {
