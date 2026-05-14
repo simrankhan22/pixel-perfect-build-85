@@ -49,7 +49,7 @@ const ToolsSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-12 px-6 relative overflow-hidden">
+    <section className="py-20 px-6 relative overflow-hidden">
 
       <div 
         ref={ref}

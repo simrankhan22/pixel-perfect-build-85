@@ -6,7 +6,7 @@ const HeroSection = () => {
   const { ref: aboutRef, isVisible: aboutVisible } = useScrollAnimation();
 
   return (
-    <section className="pt-32 pb-16 px-6 relative overflow-hidden">
+    <section className="pt-32 pb-20 px-6 relative overflow-hidden">
       <div className="container mx-auto max-w-4xl relative">
         {/* Hero Header */}
         <div 
