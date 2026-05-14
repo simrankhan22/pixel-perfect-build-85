@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useTheme } from "next-themes";
-import { Sun, Moon } from "lucide-react";
 
 type NavLink =
   | { type: "route"; href: string; label: string }
@@ -17,7 +15,6 @@ const navLinks: NavLink[] = [
 const Navigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { theme, setTheme } = useTheme();
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -90,13 +87,6 @@ const Navigation = () => {
             </a>
           );
         })}
-        <button
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="p-2 rounded-full bg-primary/10 border border-primary/20 text-foreground hover:bg-primary/20 hover:border-primary/40 transition-all"
-          aria-label="Toggle theme"
-        >
-          {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-        </button>
       </div>
     </nav>
   );
