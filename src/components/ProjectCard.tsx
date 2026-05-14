@@ -82,9 +82,9 @@ export const ProjectCard = ({
                 href={l.href || "#"}
                 target={l.href ? "_blank" : undefined}
                 rel={l.href ? "noopener noreferrer" : undefined}
-                className="text-xs text-primary hover:text-primary/80 inline-flex items-center gap-1 transition-colors"
+                className="text-sm font-medium text-primary hover:text-primary/80 inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md hover:bg-primary/10 transition-colors"
               >
-                <Icon className="w-3 h-3" />
+                <Icon className="w-4 h-4" />
                 {l.label}
               </a>
             );
