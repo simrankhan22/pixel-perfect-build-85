@@ -1,75 +1,119 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { FileText, ExternalLink } from "lucide-react";
+import { FileText, ExternalLink, GraduationCap, Database } from "lucide-react";
 
 const publications = [
   {
-    title: "MediMatch: AI-Driven Drug Recommendation System",
-    venue: "IEEE ICSCSS 2024",
-    description:
-      "Random Forest + SVM classifier built on 4,000+ hand-curated entries with 25+ symptom features for personalized drug recommendation.",
-    tags: ["Python", "Scikit-learn", "Healthcare AI"],
+    icon: FileText,
+    citation:
+      'Khan, Simran (2024). "MediMatch: AI-Driven Drug Recommendation System." ICSCSS 2024, pp. 1342–1349.',
+    linkLabel: "Link to DOI",
+    link: "#",
+  },
+  {
+    icon: Database,
+    citation: "Khan, Simran (2023). MediMatch dataset on Kaggle.",
+    linkLabel: "View on Kaggle",
     link: "#",
   },
 ];
 
+const education = [
+  {
+    degree: "MSc Data Science: Data Engineering",
+    school: "Uppsala University",
+    period: "2025 – present",
+  },
+  {
+    degree: "B.E. Computer Engineering",
+    school: "SAKEC",
+    period: "2020 – 2024",
+    detail: "GPA 8.44 / 10",
+  },
+];
+
 const PublicationsSection = () => {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref: pubRef, isVisible: pubVisible } = useScrollAnimation();
+  const { ref: eduRef, isVisible: eduVisible } = useScrollAnimation();
 
   return (
-    <section
-      id="publications"
-      ref={ref}
-      className={`py-12 px-6 scroll-mt-24 relative z-10 transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}
-    >
-      <div className="container mx-auto max-w-4xl">
-        <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
-          <span className="metallic-text">Publications</span>
-        </h2>
-        <div className="space-y-4">
-          {publications.map((pub) => (
-            <a
-              key={pub.title}
-              href={pub.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block rounded-xl border border-primary/15 bg-primary/5 backdrop-blur-sm p-6 transition-all duration-300 hover:border-primary/40 hover:bg-primary/10 hover:-translate-y-0.5"
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0">
-                  <FileText className="w-5 h-5 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center justify-between gap-3 mb-1">
-                    <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {pub.title}
-                    </h3>
-                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+    <>
+      <section
+        id="publications"
+        ref={pubRef}
+        className={`py-12 px-6 scroll-mt-24 relative z-10 transition-all duration-700 ${
+          pubVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
+            <span className="metallic-text">Publications</span>
+          </h2>
+          <div className="space-y-4">
+            {publications.map((pub) => (
+              <a
+                key={pub.citation}
+                href={pub.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-xl border border-primary/15 bg-primary/5 backdrop-blur-sm p-6 transition-all duration-300 hover:border-primary/40 hover:bg-primary/10 hover:-translate-y-0.5"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0">
+                    <pub.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <p className="text-xs uppercase tracking-wider text-primary/80 font-medium mb-2">
-                    {pub.venue}
-                  </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                    {pub.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {pub.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs text-muted-foreground border border-border/60 px-2 py-0.5 rounded-md"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="flex-1">
+                    <p className="text-sm text-foreground leading-relaxed mb-2">
+                      {pub.citation}
+                    </p>
+                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary group-hover:underline">
+                      {pub.linkLabel}
+                      <ExternalLink className="w-3 h-3" />
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="education"
+        ref={eduRef}
+        className={`py-12 px-6 scroll-mt-24 relative z-10 transition-all duration-700 ${
+          eduVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
+            <span className="metallic-text">Education</span>
+          </h2>
+          <div className="space-y-4">
+            {education.map((item) => (
+              <div
+                key={item.degree}
+                className="group rounded-xl border border-primary/15 bg-primary/5 backdrop-blur-sm p-6 transition-all duration-300 hover:border-primary/40 hover:bg-primary/10 hover:-translate-y-0.5"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0">
+                    <GraduationCap className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {item.degree}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {item.school} · {item.period}
+                      {item.detail ? ` · ${item.detail}` : ""}
+                    </p>
                   </div>
                 </div>
               </div>
-            </a>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
