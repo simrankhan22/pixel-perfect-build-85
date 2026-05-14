@@ -19,6 +19,7 @@ type Item = {
   tags: string[];
   impact?: string;
   link?: { url: string; label: string };
+  links?: { url: string; label: string }[];
 };
 
 const timeline: Item[] = [
