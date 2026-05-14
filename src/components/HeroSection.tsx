@@ -31,8 +31,8 @@ const HeroSection = () => {
             {/* Doodle arrow connecting greeting to profile photo (desktop only) */}
             <svg
               aria-hidden="true"
-              viewBox="0 0 160 110"
-              className="hidden md:block absolute -left-40 -top-6 w-40 h-20 text-primary pointer-events-none opacity-80"
+              viewBox="0 0 180 100"
+              className="hidden md:block absolute -left-40 -top-4 w-40 h-20 text-primary pointer-events-none opacity-85"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -40,13 +40,13 @@ const HeroSection = () => {
               strokeLinejoin="round"
             >
               <path
-                d="M150 18 C 110 6, 70 18, 45 50 C 32 66, 24 84, 22 96"
+                d="M170 12 C 130 2, 75 8, 50 38 C 38 52, 32 70, 38 86"
                 strokeDasharray="4 5"
                 className={heroVisible ? 'animate-fade-in' : ''}
                 style={{ animationDelay: '0.6s' }}
               />
               <path
-                d="M22 96 L 14 82 M22 96 L 36 90"
+                d="M38 86 L 26 78 M38 86 L 48 74"
                 className={heroVisible ? 'animate-fade-in' : ''}
                 style={{ animationDelay: '0.9s' }}
               />
