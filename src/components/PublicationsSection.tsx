@@ -48,7 +48,7 @@ const PublicationsSection = () => {
       >
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8">
-            <span className="metallic-text">Education and Certificates</span>
+            <span className="metallic-text">Publications</span>
           </h2>
           <div className="space-y-4">
             {publications.map((pub) => (

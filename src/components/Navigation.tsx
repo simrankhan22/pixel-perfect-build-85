@@ -8,7 +8,8 @@ type NavLink =
 const navLinks: NavLink[] = [
   { type: "route", href: "/", label: "Home" },
   { type: "route", href: "/projects", label: "Projects" },
-  { type: "route", href: "/publications", label: "Publications" },
+  { type: "route", href: "/publications", label: "Education and Certificates" },
+  { type: "route", href: "/beyond-the-code", label: "Beyond the Code" },
   { type: "anchor", id: "get-in-touch", label: "Contact" },
 ];
 
