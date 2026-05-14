@@ -118,6 +118,7 @@ export const completedProjects: Project[] = [
       "Speech-to-response pipeline handling 10+ distinct customer service query types. Integrated ElevenLabs for real-time natural voice synthesis. Built end-to-end in 48 hours.",
     status: "hackathon",
     statusLabel: "48h hackathon",
+    partner: { name: "Impact Solution", href: "https://www.impactsolution.se/" },
     tags: ["ElevenLabs API", "Voice AI", "Python"],
     links: [
       {
