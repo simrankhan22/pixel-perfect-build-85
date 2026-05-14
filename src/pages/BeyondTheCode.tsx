@@ -160,17 +160,20 @@ const BeyondTheCode = () => {
                         {item.impact}
                       </div>
                     )}
-                    {item.link && (
-                      <div className="mt-3">
-                        <a
-                          href={item.link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
-                        >
-                          {item.link.label}
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
+                    {(item.link || item.links) && (
+                      <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
+                        {[...(item.link ? [item.link] : []), ...(item.links ?? [])].map((l) => (
+                          <a
+                            key={l.url}
+                            href={l.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
+                          >
+                            {l.label}
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        ))}
                       </div>
                     )}
                   </div>
