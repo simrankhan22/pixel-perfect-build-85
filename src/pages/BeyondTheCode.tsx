@@ -29,7 +29,10 @@ const timeline: Item[] = [
     org: "Uppsala University, Sweden",
     desc: "Representing the programme to prospective students globally. Responsibilities include shooting YouTube content for the programme, a written interview published on the university website, and conducting seminars at home universities in India.",
     tags: ["content creation", "public speaking", "international outreach"],
-    link: { url: "https://lnkd.in/dAAQCn7n", label: "Read interview on Uppsala University" },
+    links: [
+      { url: "https://lnkd.in/dAAQCn7n", label: "Read interview on Uppsala University" },
+      { url: "https://drive.google.com/file/d/1eILmQfMQQ5y2mA040SXt8ilAxcFotgf1/view", label: "View certificate" },
+    ],
   },
   {
     title: "MER — CLICK2026 Social Media",
