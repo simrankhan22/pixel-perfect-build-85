@@ -23,14 +23,14 @@ type Item = {
 const timeline: Item[] = [
   {
     title: "International Student Ambassador — Science & Technology",
-    date: "2025 – present",
+    date: "2025",
     org: "Uppsala University, Sweden",
     desc: "Representing the programme to prospective students globally. Responsibilities include shooting YouTube content for the programme, a written interview published on the university website, and conducting seminars at home universities in India.",
     tags: ["content creation", "public speaking", "international outreach"],
   },
   {
     title: "MER — CLICK2026 Social Media",
-    date: "2025 – present",
+    date: "2026 – present",
     org: "Uppsala University, Sweden",
     desc: "Managing social media content strategy and execution for CLICK2026, a student-run event at Uppsala. Responsible for digital marketing, content planning, and optimising campaign performance.",
     tags: ["social media", "digital marketing", "content strategy"],
@@ -74,7 +74,7 @@ const BeyondTheCode = () => {
               beyond the code
             </div>
             <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4 leading-tight">
-              <span className="metallic-text">Leadership & Community</span>
+              <span className="metallic-text">Beyond the Code</span>
             </h1>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
               Leadership, community building, and communication — the other side
