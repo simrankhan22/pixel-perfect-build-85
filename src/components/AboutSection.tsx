@@ -37,7 +37,7 @@ const AboutSection = () => {
   const { ref: interestsRef, isVisible: interestsVisible } = useScrollAnimation();
 
   return (
-    <div className="py-20 relative z-10">
+    <div className="py-12 relative z-10">
       <section ref={skillsRef} className={`px-6 mb-24 transition-all duration-700 ${skillsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8"><span className="metallic-text">My Skills</span></h2>
