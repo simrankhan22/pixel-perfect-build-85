@@ -9,7 +9,7 @@ const navLinks: NavLink[] = [
   { type: "route", href: "/", label: "Home" },
   { type: "route", href: "/projects", label: "Projects" },
   { type: "route", href: "/publications", label: "Publications" },
-  { type: "anchor", id: "contact", label: "Contact" },
+  { type: "anchor", id: "get-in-touch", label: "Contact" },
 ];
 
 const Navigation = () => {
