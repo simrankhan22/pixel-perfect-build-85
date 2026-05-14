@@ -21,11 +21,13 @@ const education = [
   {
     degree: "MSc Data Science: Data Engineering",
     school: "Uppsala University",
+    schoolLink: "https://www.uu.se/en",
     period: "2025 – present",
   },
   {
     degree: "B.E. Computer Engineering",
     school: "SAKEC",
+    schoolLink: "https://www.sakec.ac.in/",
     period: "2020 – 2024",
     detail: "GPA 8.44 / 10",
   },
@@ -103,7 +105,15 @@ const PublicationsSection = () => {
                       {item.degree}
                     </h3>
                     <p className="text-sm text-muted-foreground mt-1">
-                      {item.school} · {item.period}
+                      <a
+                        href={item.schoolLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80 underline-offset-2 hover:underline transition-colors"
+                      >
+                        {item.school}
+                      </a>{" "}
+                      · {item.period}
                       {item.detail ? ` · ${item.detail}` : ""}
                     </p>
                   </div>
