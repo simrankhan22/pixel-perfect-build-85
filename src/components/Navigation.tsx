@@ -73,7 +73,12 @@ const Navigation = () => {
 
   const handleRoute = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
+    if (location.pathname === href) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
     navigate(href);
+    window.scrollTo({ top: 0, behavior: "auto" });
   };
 
   return (
