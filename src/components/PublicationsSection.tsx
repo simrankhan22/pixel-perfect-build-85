@@ -24,8 +24,8 @@ const certificateGroups: { title: string; icon: typeof Cpu; items: Cert[] }[] = 
     title: "Machine Learning & AI",
     icon: Cpu,
     items: [
-      { issuer: "Internshala", name: "Machine Learning Training", badge: "core skill", highlight: true },
-      { issuer: "Internshala", name: "Programming with Python", badge: "core skill", highlight: true, link: "https://trainings.internshala.com/certificate/view/nsdc/gajvfxv36w7/4u2ehzeatna/" },
+      { issuer: "Internshala", name: "Machine Learning Training", badge: "core skill", highlight: true, link: "https://trainings.internshala.com/view_certificate/5rktao02ohd/4z55msb5lhf/" },
+      { issuer: "Internshala", name: "Programming with Python", badge: "core skill", highlight: true, link: "https://trainings.internshala.com/view_certificate/gajvfxv36w7/16prfubg4ko/" },
       { issuer: "Infosys", name: "R Programming", badge: "data science" },
       { issuer: "IEEE", name: "Research Paper Presentation — MediMatch", badge: "published", link: "https://www.linkedin.com/posts/simrankhan23_i-recently-had-the-honor-of-presenting-my-share-7223309708118376448-rx5x" },
     ],
