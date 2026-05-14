@@ -33,8 +33,21 @@ export const completedProjects: Project[] = [
     featured: true,
     tags: ["Python", "Scikit-learn", "Random Forest", "SVM", "Kaggle dataset"],
     links: [
-      { label: "IEEE paper", icon: "external" },
-      { label: "Kaggle dataset", icon: "database" },
+      {
+        label: "IEEE paper",
+        icon: "external",
+        href: "https://ieeexplore.ieee.org/document/10625049",
+      },
+      {
+        label: "Kaggle dataset",
+        icon: "database",
+        href: "https://www.kaggle.com/datasets/simrankhan2002/medimatch-dataset",
+      },
+      {
+        label: "GitHub",
+        icon: "github",
+        href: "https://github.com/simrankhan22/MediMatch-AI-driven-drug-recommendation-system",
+      },
     ],
   },
   {
@@ -45,7 +58,13 @@ export const completedProjects: Project[] = [
     status: "completed",
     statusLabel: "completed",
     tags: ["TensorFlow", "CNNs", "Data augmentation", "92% accuracy"],
-    links: [{ label: "GitHub", icon: "github" }],
+    links: [
+      {
+        label: "GitHub",
+        icon: "github",
+        href: "https://github.com/simrankhan22/BrainTumor_detection_system",
+      },
+    ],
   },
   {
     id: "aideas",
@@ -55,6 +74,13 @@ export const completedProjects: Project[] = [
     status: "hackathon",
     statusLabel: "hackathon · grant project",
     tags: ["ElevenLabs API", "Telephony API", "Python", "Voice AI"],
+    links: [
+      {
+        label: "GitHub",
+        icon: "github",
+        href: "https://github.com/simrankhan22/aideas-a-strart-up-hack",
+      },
+    ],
   },
   {
     id: "customer-segmentation",
@@ -65,6 +91,13 @@ export const completedProjects: Project[] = [
     statusLabel: "in progress",
     tags: ["Python", "Scikit-learn", "K-means", "Olist dataset"],
     relevantTo: ["Klarna", "H&M", "IKEA"],
+    links: [
+      {
+        label: "GitHub",
+        icon: "github",
+        href: "https://github.com/simrankhan22/customer-segmentation-and-retention-analysis-main",
+      },
+    ],
   },
   {
     id: "demand-forecasting",
@@ -84,7 +117,13 @@ export const completedProjects: Project[] = [
     status: "hackathon",
     statusLabel: "48h hackathon",
     tags: ["ElevenLabs API", "Voice AI", "Python"],
-    links: [{ label: "GitHub", icon: "github" }],
+    links: [
+      {
+        label: "GitHub",
+        icon: "github",
+        href: "https://github.com/simrankhan22/Agentic_Ragnar",
+      },
+    ],
   },
 ];
 
