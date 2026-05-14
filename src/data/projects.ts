@@ -89,8 +89,8 @@ export const completedProjects: Project[] = [
     title: "Customer segmentation — RFM + K-means",
     description:
       "RFM scoring and K-means clustering on the Olist e-commerce dataset. Adding a churn prediction model on top of the segments. Maps directly to retention and loyalty problems at retail companies.",
-    status: "in-progress",
-    statusLabel: "in progress",
+    status: "completed",
+    statusLabel: "completed",
     tags: ["Python", "Scikit-learn", "K-means", "Olist dataset"],
     relevantTo: ["Klarna", "H&M", "IKEA"],
     links: [
