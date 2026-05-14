@@ -45,6 +45,11 @@ export const completedProjects: Project[] = [
         href: "https://www.kaggle.com/datasets/simrankhan2002/medimatch-dataset",
       },
       {
+        label: "Publication certificate",
+        icon: "award",
+        href: "https://www.linkedin.com/posts/simrankhan23_i-recently-had-the-honor-of-presenting-my-share-7223309708118376448-rx5x",
+      },
+      {
         label: "GitHub",
         icon: "github",
         href: "https://github.com/simrankhan22/MediMatch-AI-driven-drug-recommendation-system",
