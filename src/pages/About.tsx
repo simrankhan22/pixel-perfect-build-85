@@ -103,12 +103,14 @@ const About = () => {
               About: My background
             </h1>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xl">
-              Hi, I'm Simran Khan — a passionate full-stack developer and AI enthusiast 
-              with a love for creating elegant, user-centric digital experiences. With a 
-              strong foundation in computer science and years of hands-on experience, I 
-              specialize in building scalable web applications and integrating cutting-edge 
-              machine learning solutions. I believe in the power of technology to transform 
-              ideas into impactful realities.
+              Hi, I'm Simran Khan — currently pursuing a Master's in Data Science
+              (Data Engineering) at Uppsala University, Sweden. I hold a Bachelor's
+              in Computer Engineering from Shah & Anchor Kutchhi Engineering College,
+              Mumbai. I'm passionate about AI/ML, deep learning, and turning data into
+              meaningful, real-world impact — from published IEEE research on AI-driven
+              drug recommendation to building intelligent systems for healthcare.
+              Alongside tech, I've led alumni outreach and digital media teams, and
+              currently serve as an International Student Ambassador at Uppsala University.
             </p>
           </div>
         </section>
