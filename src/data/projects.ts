@@ -143,18 +143,18 @@ export interface RoadmapItem {
 
 export const roadmap: RoadmapItem[] = [
   {
-    title: "NLP insights pipeline — transformer + RAG",
-    why: "Going beyond sentiment analysis: build a small RAG pipeline on top of a transformer model for extracting structured insights from text/review data.",
-    relevantTo: ["Spotify", "King", "Klarna"],
+    title: "End-to-end ML deployment — FastAPI + Docker + GCP Cloud Run",
+    why: "The planned stack: a FastAPI endpoint will expose the model as a REST API that takes in a customer's RFM features and returns a churn probability. That API will be Dockerized for full environment reproducibility, deployed on GCP Cloud Run for automatic scaling, and wired up with basic model monitoring to catch prediction drift before it becomes a real problem.\n\nThis is intentionally the last project in my roadmap because it's the one that ties everything together. The goal isn't just to deploy a model — it's to demonstrate the full lifecycle from experiment to production.",
+    relevantTo: ["all data engineering roles"],
   },
   {
     title: "A/B testing + uplift modelling",
-    why: "Causal inference, treatment effects, and experimental design — the most underrated skill at this level. Very few candidates can do this properly.",
+    why: "The plan covers the full experimental design and causal inference stack, starting with proper A/B test setup: defining treatment and control, checking pre-experiment covariate balance, calculating required sample sizes, and avoiding the peeking problem that invalidates most real-world tests. From there the project moves into uplift modelling — instead of asking \"did this intervention work?\", the goal is to answer \"for which users did it work, and by how much?\" using T-Learner, S-Learner, and X-Learner meta-models on top of gradient boosted trees.\n\nI'm prioritising this because it's the most underrated skill gap at graduate level right now. Product-led companies like Spotify, Klarna, and Voi run hundreds of experiments simultaneously and need people who genuinely understand causal inference, not just statistical significance. I want to be able to walk into any of those interviews and talk about treatment effects with confidence.",
     relevantTo: ["Spotify", "Klarna", "Voi"],
   },
   {
-    title: "End-to-end ML deployment (FastAPI + Docker + GCP)",
-    why: "Take the churn model from project 1, wrap a FastAPI endpoint around it, Dockerize, deploy on GCP Cloud Run, add basic monitoring. Shows the full production engineering loop.",
-    relevantTo: ["all data engineering roles"],
+    title: "NLP insights pipeline — transformer + RAG",
+    why: "The plan is to work in layers. Raw text data — product reviews, support tickets, or user feedback — will be chunked, embedded, and stored in a vector database. When a query comes in (\"what are users complaining about in the checkout flow?\"), the retrieval layer will pull the most semantically relevant chunks and pass them as context to a transformer model, which synthesises a structured, grounded answer rather than hallucinating one. The goal is output that isn't just sentiment but categorised themes, recurring pain points, and actionable signals that a product or data team can actually use.\n\nI'm building this because companies like Spotify, King, and Klarna are sitting on massive volumes of user-generated text and very few candidates at graduate level can build a pipeline that turns raw text into structured intelligence. I want to be one of them.",
+    relevantTo: ["Spotify", "King", "Klarna"],
   },
 ];
