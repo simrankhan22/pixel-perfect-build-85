@@ -1,5 +1,7 @@
 import profilePhoto from "@/assets/profile-photo.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Button } from "@/components/ui/button";
+import { FileText } from "lucide-react";
 
 const HeroSection = () => {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
