@@ -1,5 +1,7 @@
 import profilePhoto from "@/assets/profile-photo.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Button } from "@/components/ui/button";
+import { FileText } from "lucide-react";
 
 const HeroSection = () => {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
@@ -63,6 +65,14 @@ const HeroSection = () => {
             <p>
               Outside of coursework, I regularly attend lectures, tech events, and hackathons where I stay sharp, pick up new tools fast, and occasionally ship something in 48 hours that I'm genuinely proud of. Based in Uppsala, looking for internships and data engineering or ML engineering roles.
             </p>
+          </div>
+          <div className={`mt-8 ${aboutVisible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.3s' }}>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground hover-lift">
+                <FileText className="mr-2 w-4 h-4" />
+                View Full Resume
+              </Button>
+            </a>
           </div>
         </div>
       </div>
