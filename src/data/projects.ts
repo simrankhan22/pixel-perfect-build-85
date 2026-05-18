@@ -91,12 +91,12 @@ export const completedProjects: Project[] = [
   },
   {
     id: "customer-segmentation",
-    title: "Customer segmentation — RFM + K-means",
+    title: "Customer segmentation — RFM + K-means clustering",
     description:
-      "RFM scoring and K-means clustering on the Olist e-commerce dataset. Adding a churn prediction model on top of the segments. Maps directly to retention and loyalty problems at retail companies.",
+      "Understanding your customers sounds simple. Doing it rigorously on real transaction data is not. This project uses the HuggingFace dataset — one of the richest public retail datasets available — to build a full customer segmentation and churn prediction system.\n\nThe pipeline starts with RFM scoring: each customer is scored on Recency (how recently they bought), Frequency (how often), and Monetary value (how much they spent). Those scores feed into a K-means clustering model that groups customers into behaviorally distinct segments — high-value loyalists, at-risk churners, one-time buyers, and so on. On top of the segments, a churn prediction model identifies which customers are most likely to leave before they do, giving a business the window to act. This is the kind of work that directly maps to retention, loyalty, and CRM problems at companies like Klarna, H&M, and IKEA.",
     status: "completed",
     statusLabel: "completed",
-    tags: ["Python", "Scikit-learn", "K-means", "Olist dataset"],
+    tags: ["Python", "Scikit-learn", "K-means", "RFM scoring", "Churn prediction", "Pandas", "Olist dataset"],
     relevantTo: ["Klarna", "H&M", "IKEA"],
     links: [
       {
