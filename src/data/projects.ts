@@ -58,12 +58,12 @@ export const completedProjects: Project[] = [
   },
   {
     id: "brain-tumor",
-    title: "Brain tumor detection via CNN",
+    title: "Brain tumor detection using CNN",
     description:
-      "Deep learning classifier trained on 8,000 MRI scans. Built augmentation and preprocessing pipelines from scratch. Iterative architecture and optimizer tuning reached 92% classification accuracy.",
+      "Medical imaging is one of the hardest problems in applied deep learning — the margin for error is zero and the data is expensive to label. This project tackled early tumor detection from MRI scans using a Convolutional Neural Network trained on a dataset of 8,000 images.\n\nThe work wasn't just about building a model. It was about making it reliable. I built augmentation and preprocessing pipelines from scratch to handle the natural variability in MRI scans, which is often where medical imaging models fail in the real world. From there, the project went through iterative architecture tuning and optimizer experiments — testing different layer configurations, activation functions, and learning rate schedules until the system reached a classification accuracy of 92%. The result is a model that doesn't just perform well on paper, but is built with the kind of rigour that medical applications demand.",
     status: "completed",
     statusLabel: "completed",
-    tags: ["TensorFlow", "CNNs", "Data augmentation", "92% accuracy"],
+    tags: ["TensorFlow", "CNNs", "Data augmentation", "Preprocessing pipelines", "Deep learning"],
     links: [
       {
         label: "GitHub",
