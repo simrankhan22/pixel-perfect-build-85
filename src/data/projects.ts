@@ -76,11 +76,11 @@ export const completedProjects: Project[] = [
     id: "aideas",
     title: "Aideas — AI grant verification assistant",
     description:
-      "AI system that takes business information as input, cross-references it with publicly available online data, then places a real phone call to the business to confirm accuracy. Built with ElevenLabs speech synthesis and a telephony cell API for automated voice outreach.",
+      "Grant applications are full of unverified claims. Aideas was built to fix that — an AI system that takes a business's submitted information, cross-references it against publicly available online data, and then places an actual phone call to the business to verbally confirm the details.\n\nThe architecture has three moving parts working together: an information retrieval layer that scrapes and parses public data about the business, a decision layer that identifies discrepancies between what was submitted and what's publicly known, and a voice layer built on the ElevenLabs speech synthesis API and a telephone cell API that handles the outbound call with natural, real-time voice responses. The result is an end-to-end verification pipeline that removes human bottlenecks from a process that currently takes days. Built as part of a grant project.",
     status: "hackathon",
     statusLabel: "hackathon · grant project",
     partner: { name: "Grant Thornton", href: "https://www.grantthornton.se/en/" },
-    tags: ["ElevenLabs API", "Telephony API", "Python", "Voice AI"],
+    tags: ["Python", "ElevenLabs API", "Telephony API", "Voice AI", "Data retrieval"],
     links: [
       {
         label: "GitHub",
