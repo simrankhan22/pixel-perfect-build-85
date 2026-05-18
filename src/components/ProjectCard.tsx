@@ -155,9 +155,11 @@ export const RoadmapCard = ({
         <h4 className="text-sm md:text-base font-medium text-foreground mb-1">
           {item.title}
         </h4>
-        <p className="text-sm text-muted-foreground leading-relaxed">
-          {item.why}
-        </p>
+        {item.why.split("\n\n").map((para, i) => (
+          <p key={i} className="text-sm text-muted-foreground leading-relaxed mb-2 last:mb-0">
+            {para}
+          </p>
+        ))}
         {item.relevantTo && (
           <div className="flex flex-wrap gap-1.5 mt-2">
             <span className="text-[11px] text-muted-foreground/70">
