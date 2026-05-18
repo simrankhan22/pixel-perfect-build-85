@@ -118,13 +118,13 @@ export const completedProjects: Project[] = [
   },
   {
     id: "agnetic-ragnar",
-    title: "Agnetic Ragnar — voice AI customer service",
+    title: "Agnetic Ragnar — voice AI customer service assistant",
     description:
-      "Speech-to-response pipeline handling 10+ distinct customer service query types. Integrated ElevenLabs for real-time natural voice synthesis. Built end-to-end in 48 hours.",
+      "Built in 48 hours at a hackathon, Agnetic Ragnar is a voice-based AI assistant designed to handle real customer service interactions — not just answer FAQs, but manage the full speech-to-response loop across 10+ distinct query types.\n\nThe core challenge wasn't the AI, it was latency. A voice assistant that hesitates for three seconds between question and answer is useless in a real service context. The project required integrating the ElevenLabs speech synthesis API for natural-sounding real-time voice output, and designing a pipeline architecture where speech input, intent classification, response generation, and voice synthesis all happen fast enough to feel like a conversation. Shipping something this technically layered in 48 hours required tight scoping, fast debugging, and a lot of decision-making under pressure — which, as it turns out, is also what most real engineering jobs feel like.",
     status: "hackathon",
     statusLabel: "48h hackathon",
     partner: { name: "Impact Solution", href: "https://www.impactsolution.se/" },
-    tags: ["ElevenLabs API", "Voice AI", "Python"],
+    tags: ["Python", "ElevenLabs API", "Voice AI", "Speech-to-response pipeline", "API integration"],
     links: [
       {
         label: "GitHub",
