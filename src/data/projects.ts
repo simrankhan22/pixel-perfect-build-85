@@ -26,13 +26,13 @@ export interface Project {
 export const completedProjects: Project[] = [
   {
     id: "medimatch",
-    title: "MediMatch — AI drug recommendation system",
+    title: "MediMatch — AI-driven drug recommendation system",
     description:
-      "Built a hand-labeled dataset of 4,000+ entries across 25+ Ayurvedic symptom features. Trained Random Forest and SVM models with custom feature engineering pipelines and rigorous hyperparameter tuning. Presented and published at IEEE ICSCSS 2024.",
+      "Most drug recommendation systems are built on pharmaceutical databases. MediMatch was built on a problem: Ayurvedic medicine has no standardised digital dataset. So I built one from scratch with 4,000+ hand-labeled entries mapping individual symptoms to personalised Ayurvedic treatments across 25+ symptom features. The data engineering alone took months of research, curation, and cleaning before a single model was trained.\n\nOn top of that dataset, I designed and trained a machine learning pipeline using Random Forest and SVM models with custom feature engineering. The system went through rigorous hyperparameter tuning and cross-validation to push recommendation accuracy as high as possible. The research was submitted, accepted, and presented at the IEEE International Conference on Sustainable Computing and Smart Systems (ICSCSS 2024) — published in the proceedings at pp. 1342–1349. The dataset is publicly available on Kaggle for other researchers to build on.",
     status: "ieee",
     statusLabel: "IEEE ICSCSS 2024",
     featured: false,
-    tags: ["Python", "Scikit-learn", "Random Forest", "SVM", "Kaggle dataset"],
+    tags: ["Python", "Scikit-learn", "Random Forest", "SVM", "Feature engineering", "Hyperparameter tuning"],
     links: [
       {
         label: "IEEE paper",
