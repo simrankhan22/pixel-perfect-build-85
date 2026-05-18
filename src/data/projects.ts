@@ -58,12 +58,12 @@ export const completedProjects: Project[] = [
   },
   {
     id: "brain-tumor",
-    title: "Brain tumor detection via CNN",
+    title: "Brain tumor detection using CNN",
     description:
-      "Deep learning classifier trained on 8,000 MRI scans. Built augmentation and preprocessing pipelines from scratch. Iterative architecture and optimizer tuning reached 92% classification accuracy.",
+      "Medical imaging is one of the hardest problems in applied deep learning — the margin for error is zero and the data is expensive to label. This project tackled early tumor detection from MRI scans using a Convolutional Neural Network trained on a dataset of 8,000 images.\n\nThe work wasn't just about building a model. It was about making it reliable. I built augmentation and preprocessing pipelines from scratch to handle the natural variability in MRI scans, which is often where medical imaging models fail in the real world. From there, the project went through iterative architecture tuning and optimizer experiments — testing different layer configurations, activation functions, and learning rate schedules until the system reached a classification accuracy of 92%. The result is a model that doesn't just perform well on paper, but is built with the kind of rigour that medical applications demand.",
     status: "completed",
     statusLabel: "completed",
-    tags: ["TensorFlow", "CNNs", "Data augmentation", "92% accuracy"],
+    tags: ["TensorFlow", "CNNs", "Data augmentation", "Preprocessing pipelines", "Deep learning"],
     links: [
       {
         label: "GitHub",
@@ -76,11 +76,11 @@ export const completedProjects: Project[] = [
     id: "aideas",
     title: "Aideas — AI grant verification assistant",
     description:
-      "AI system that takes business information as input, cross-references it with publicly available online data, then places a real phone call to the business to confirm accuracy. Built with ElevenLabs speech synthesis and a telephony cell API for automated voice outreach.",
+      "Grant applications are full of unverified claims. Aideas was built to fix that — an AI system that takes a business's submitted information, cross-references it against publicly available online data, and then places an actual phone call to the business to verbally confirm the details.\n\nThe architecture has three moving parts working together: an information retrieval layer that scrapes and parses public data about the business, a decision layer that identifies discrepancies between what was submitted and what's publicly known, and a voice layer built on the ElevenLabs speech synthesis API and a telephone cell API that handles the outbound call with natural, real-time voice responses. The result is an end-to-end verification pipeline that removes human bottlenecks from a process that currently takes days. Built as part of a grant project.",
     status: "hackathon",
     statusLabel: "hackathon · grant project",
     partner: { name: "Grant Thornton", href: "https://www.grantthornton.se/en/" },
-    tags: ["ElevenLabs API", "Telephony API", "Python", "Voice AI"],
+    tags: ["Python", "ElevenLabs API", "Telephony API", "Voice AI", "Data retrieval"],
     links: [
       {
         label: "GitHub",
@@ -91,12 +91,12 @@ export const completedProjects: Project[] = [
   },
   {
     id: "customer-segmentation",
-    title: "Customer segmentation — RFM + K-means",
+    title: "Customer segmentation — RFM + K-means clustering",
     description:
-      "RFM scoring and K-means clustering on the Olist e-commerce dataset. Adding a churn prediction model on top of the segments. Maps directly to retention and loyalty problems at retail companies.",
+      "Understanding your customers sounds simple. Doing it rigorously on real transaction data is not. This project uses the HuggingFace dataset — one of the richest public retail datasets available — to build a full customer segmentation and churn prediction system.\n\nThe pipeline starts with RFM scoring: each customer is scored on Recency (how recently they bought), Frequency (how often), and Monetary value (how much they spent). Those scores feed into a K-means clustering model that groups customers into behaviorally distinct segments — high-value loyalists, at-risk churners, one-time buyers, and so on. On top of the segments, a churn prediction model identifies which customers are most likely to leave before they do, giving a business the window to act. This is the kind of work that directly maps to retention, loyalty, and CRM problems at companies like Klarna, H&M, and IKEA.",
     status: "completed",
     statusLabel: "completed",
-    tags: ["Python", "Scikit-learn", "K-means", "Olist dataset"],
+    tags: ["Python", "Scikit-learn", "K-means", "RFM scoring", "Churn prediction", "Pandas", "Olist dataset"],
     relevantTo: ["Klarna", "H&M", "IKEA"],
     links: [
       {
@@ -118,13 +118,13 @@ export const completedProjects: Project[] = [
   },
   {
     id: "agnetic-ragnar",
-    title: "Agnetic Ragnar — voice AI customer service",
+    title: "Agnetic Ragnar — voice AI customer service assistant",
     description:
-      "Speech-to-response pipeline handling 10+ distinct customer service query types. Integrated ElevenLabs for real-time natural voice synthesis. Built end-to-end in 48 hours.",
+      "Built in 48 hours at a hackathon, Agnetic Ragnar is a voice-based AI assistant designed to handle real customer service interactions — not just answer FAQs, but manage the full speech-to-response loop across 10+ distinct query types.\n\nThe core challenge wasn't the AI, it was latency. A voice assistant that hesitates for three seconds between question and answer is useless in a real service context. The project required integrating the ElevenLabs speech synthesis API for natural-sounding real-time voice output, and designing a pipeline architecture where speech input, intent classification, response generation, and voice synthesis all happen fast enough to feel like a conversation. Shipping something this technically layered in 48 hours required tight scoping, fast debugging, and a lot of decision-making under pressure — which, as it turns out, is also what most real engineering jobs feel like.",
     status: "hackathon",
     statusLabel: "48h hackathon",
     partner: { name: "Impact Solution", href: "https://www.impactsolution.se/" },
-    tags: ["ElevenLabs API", "Voice AI", "Python"],
+    tags: ["Python", "ElevenLabs API", "Voice AI", "Speech-to-response pipeline", "API integration"],
     links: [
       {
         label: "GitHub",
