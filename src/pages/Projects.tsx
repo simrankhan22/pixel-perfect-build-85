@@ -41,7 +41,7 @@ const Projects = () => {
               5 projects shipped · 1 IEEE publication · 2 hackathons
             </p>
             <div className="mt-6">
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.google.com/file/d/1WcaQ-c1XK6vgB4qqGUIWDNYmDczLs3eO/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                 <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground hover-lift">
                   <FileText className="mr-2 w-4 h-4" />
                   View Full Resume
