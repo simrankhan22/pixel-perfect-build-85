@@ -25,6 +25,23 @@ export interface Project {
 
 export const completedProjects: Project[] = [
   {
+    id: "ai-grader",
+    title: "How Good Is the AI Grader? A Continuous Statistical Validation System for AI-Assisted Assessment",
+    description:
+      "Working with an early-stage Italy-based edtech startup to make AI-assisted grading reliable at scale. The product automates exam and assignment correction; my job is to make sure the model's outputs are trustworthy over time.\n\nI'm building the data engineering backbone for a continuous statistical validation system: designing metrics that measure grading consistency and accuracy, creating reproducible testing pipelines for new features, and structuring the data flow so the team can catch regressions before they reach teachers. It's a hands-on role that sits between ML evaluation, metric design, and product engineering — and it's running until January.",
+    status: "in-progress",
+    statusLabel: "ongoing · Italy-based startup project",
+    partner: { name: "Correggi Verifiche AI", href: "https://www.correggiverificheai.it/" },
+    tags: ["Python", "Data engineering", "Metrics design", "Testing pipelines", "AI evaluation", "Startup", "Italy-based"],
+    links: [
+      {
+        label: "Startup website",
+        icon: "external",
+        href: "https://www.correggiverificheai.it/",
+      },
+    ],
+  },
+  {
     id: "medimatch",
     title: "MediMatch — AI-driven drug recommendation system",
     description:
@@ -53,23 +70,6 @@ export const completedProjects: Project[] = [
         label: "GitHub",
         icon: "github",
         href: "https://github.com/simrankhan22/MediMatch-AI-driven-drug-recommendation-system",
-      },
-    ],
-  },
-  {
-    id: "ai-grader",
-    title: "How Good Is the AI Grader? A Continuous Statistical Validation System for AI-Assisted Assessment",
-    description:
-      "Working with an early-stage Italian edtech startup to make AI-assisted grading reliable at scale. The product automates exam and assignment correction; my job is to make sure the model's outputs are trustworthy over time.\n\nI'm building the data engineering backbone for a continuous statistical validation system: designing metrics that measure grading consistency and accuracy, creating reproducible testing pipelines for new features, and structuring the data flow so the team can catch regressions before they reach teachers. It's a hands-on role that sits between ML evaluation, metric design, and product engineering — and it's running until January.",
-    status: "in-progress",
-    statusLabel: "ongoing · startup project",
-    partner: { name: "Correggi Verifiche AI", href: "https://www.correggiverificheai.it/" },
-    tags: ["Python", "Data engineering", "Metrics design", "Testing pipelines", "AI evaluation", "Startup"],
-    links: [
-      {
-        label: "Startup website",
-        icon: "external",
-        href: "https://www.correggiverificheai.it/",
       },
     ],
   },
