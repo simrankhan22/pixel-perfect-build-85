@@ -40,6 +40,7 @@ const timeline: Item[] = [
     org: "Uppsala University, Sweden",
     desc: "Managing social media content strategy and execution for CLICK2026, a student-run event at Uppsala. Responsible for digital marketing, content planning, and optimising campaign performance.",
     tags: ["social media", "digital marketing", "content strategy"],
+    link: { url: "https://www.instagram.com/p/DZXYrDCDC82/", label: "View post on Instagram" },
   },
   {
     title: "Outreach Coordinator",
