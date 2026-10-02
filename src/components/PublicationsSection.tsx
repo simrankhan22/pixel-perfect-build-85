@@ -1,5 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { FileText, ExternalLink, GraduationCap, Database, Cpu, Terminal, Globe, Languages, Award } from "lucide-react";
+import { FileText, ExternalLink, GraduationCap, Database, Cpu, Terminal, Globe, Languages, Award, Code2, BarChart3, Mic, Wrench } from "lucide-react";
 
 const publications = [
   {
@@ -75,10 +75,46 @@ const education = [
   },
 ];
 
+const skillGroups: { title: string; icon: typeof Cpu; items: string[] }[] = [
+  {
+    title: "ML / Deep Learning",
+    icon: Cpu,
+    items: ["Scikit-learn", "TensorFlow", "Random Forest", "SVM", "CNNs", "Feature engineering", "Hyperparameter tuning", "Model evaluation"],
+  },
+  {
+    title: "Languages",
+    icon: Code2,
+    items: ["Python", "TypeScript", "JavaScript", "SQL"],
+  },
+  {
+    title: "Data Analysis",
+    icon: BarChart3,
+    items: ["Pandas", "NumPy", "SciPy", "statsmodels / Pingouin", "Jupyter"],
+  },
+  {
+    title: "AI Systems & APIs",
+    icon: Mic,
+    items: ["ElevenLabs API", "Vercel AI SDK", "Voice AI", "Telephony / voice integration", "Conversational AI pipelines"],
+  },
+  {
+    title: "Web & Backend",
+    icon: Globe,
+    items: ["Next.js", "React", "Supabase (PostgreSQL)", "Zod", "Tailwind CSS", "Clerk"],
+  },
+  {
+    title: "Infrastructure & Tools",
+    icon: Wrench,
+    items: ["Docker", "GCP Cloud Run", "FastAPI", "Vercel", "Git / GitHub"],
+  },
+];
+
 const PublicationsSection = () => {
   const { ref: pubRef, isVisible: pubVisible } = useScrollAnimation();
   const { ref: certRef, isVisible: certVisible } = useScrollAnimation();
+  const { ref: skillRef, isVisible: skillVisible } = useScrollAnimation();
   const { ref: eduRef, isVisible: eduVisible } = useScrollAnimation();
+
+
 
 
   return (
@@ -185,6 +221,47 @@ const PublicationsSection = () => {
                       </Tag>
                     );
                   })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="skills"
+        ref={skillRef}
+        className={`py-12 px-6 scroll-mt-24 relative z-10 transition-all duration-700 ${
+          skillVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
+            <span className="metallic-text">Skills</span>
+          </h2>
+          <p className="text-sm text-muted-foreground mb-8">
+            The technical stack behind my projects, research, and coursework.
+          </p>
+
+          <div className="space-y-6">
+            {skillGroups.map((group) => (
+              <div key={group.title}>
+                <div className="flex items-center gap-3 mb-3">
+                  <group.icon className="w-4 h-4 text-primary" />
+                  <h3 className="text-sm font-semibold text-foreground tracking-wide">
+                    {group.title}
+                  </h3>
+                  <div className="flex-1 h-px bg-border/60" />
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((skill) => (
+                    <span
+                      key={skill}
+                      className="inline-flex items-center text-xs font-medium px-3 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-foreground/90 transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:text-primary"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
