@@ -75,10 +75,46 @@ const education = [
   },
 ];
 
+const skillGroups: { title: string; icon: typeof Cpu; items: string[] }[] = [
+  {
+    title: "ML / Deep Learning",
+    icon: Cpu,
+    items: ["Scikit-learn", "TensorFlow", "Random Forest", "SVM", "CNNs", "Feature engineering", "Hyperparameter tuning", "Model evaluation"],
+  },
+  {
+    title: "Languages",
+    icon: Code2,
+    items: ["Python", "TypeScript", "JavaScript", "SQL"],
+  },
+  {
+    title: "Data Analysis",
+    icon: BarChart3,
+    items: ["Pandas", "NumPy", "SciPy", "statsmodels / Pingouin", "Jupyter"],
+  },
+  {
+    title: "AI Systems & APIs",
+    icon: Mic,
+    items: ["ElevenLabs API", "Vercel AI SDK", "Voice AI", "Telephony / voice integration", "Conversational AI pipelines"],
+  },
+  {
+    title: "Web & Backend",
+    icon: Globe,
+    items: ["Next.js", "React", "Supabase (PostgreSQL)", "Zod", "Tailwind CSS", "Clerk"],
+  },
+  {
+    title: "Infrastructure & Tools",
+    icon: Wrench,
+    items: ["Docker", "GCP Cloud Run", "FastAPI", "Vercel", "Git / GitHub"],
+  },
+];
+
 const PublicationsSection = () => {
   const { ref: pubRef, isVisible: pubVisible } = useScrollAnimation();
   const { ref: certRef, isVisible: certVisible } = useScrollAnimation();
+  const { ref: skillRef, isVisible: skillVisible } = useScrollAnimation();
   const { ref: eduRef, isVisible: eduVisible } = useScrollAnimation();
+
+
 
 
   return (
