@@ -67,7 +67,7 @@ const HeroSection = () => {
             </p>
           </div>
           <div className={`mt-8 ${aboutVisible ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.3s' }}>
-            <a href="https://drive.google.com/file/d/1kvNZ_n29uTOWTM4EKpiULeRz--S16Fed/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1pp72gTuBXaDL7ksstJYVsvN2DkvzdGI4/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground hover-lift">
                 <FileText className="mr-2 w-4 h-4" />
                 View Full Resume
