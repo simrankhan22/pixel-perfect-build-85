@@ -1,5 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { FileText, ExternalLink, GraduationCap, Database, Cpu, Terminal, Globe, Languages, Award } from "lucide-react";
+import { FileText, ExternalLink, GraduationCap, Database, Cpu, Terminal, Globe, Languages, Award, Code2, BarChart3, Mic, Layers, Wrench } from "lucide-react";
 
 const publications = [
   {
