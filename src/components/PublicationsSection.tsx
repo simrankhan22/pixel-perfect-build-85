@@ -229,6 +229,47 @@ const PublicationsSection = () => {
       </section>
 
       <section
+        id="skills"
+        ref={skillRef}
+        className={`py-12 px-6 scroll-mt-24 relative z-10 transition-all duration-700 ${
+          skillVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
+            <span className="metallic-text">Skills</span>
+          </h2>
+          <p className="text-sm text-muted-foreground mb-8">
+            The technical stack behind my projects, research, and coursework.
+          </p>
+
+          <div className="space-y-6">
+            {skillGroups.map((group) => (
+              <div key={group.title}>
+                <div className="flex items-center gap-3 mb-3">
+                  <group.icon className="w-4 h-4 text-primary" />
+                  <h3 className="text-sm font-semibold text-foreground tracking-wide">
+                    {group.title}
+                  </h3>
+                  <div className="flex-1 h-px bg-border/60" />
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((skill) => (
+                    <span
+                      key={skill}
+                      className="inline-flex items-center text-xs font-medium px-3 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-foreground/90 transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:text-primary"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
         id="education"
         ref={eduRef}
         className={`py-12 px-6 scroll-mt-24 relative z-10 transition-all duration-700 ${
