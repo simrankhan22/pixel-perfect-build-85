@@ -36,7 +36,7 @@ const cards = [
     icon: Download,
     accent: "from-primary/20 to-magenta/20",
     iconColor: "text-primary",
-    link: "https://drive.google.com/file/d/1kvNZ_n29uTOWTM4EKpiULeRz--S16Fed/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1pp72gTuBXaDL7ksstJYVsvN2DkvzdGI4/view?usp=sharing",
   },
 ];
 
